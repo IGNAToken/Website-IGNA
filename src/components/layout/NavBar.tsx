@@ -1,8 +1,25 @@
 import { Link } from '@tanstack/react-router'
 import Logo from '../shared/Logo'
 import { Button } from '../ui/button'
-import { MenuIcon, XIcon } from 'lucide-react'
+import { MenuIcon, XIcon, Download } from 'lucide-react'
 import { useState } from 'react'
+
+// Function to handle PDF download
+const handleWhitePaperDownload = () => {
+  // Create a link element to trigger download
+  const link = document.createElement('a')
+  link.href = '/whitepaper.pdf' // PDF should be placed in public folder
+  link.download = 'IGNA-Whitepaper.pdf'
+  link.target = '_blank'
+
+  // Try to download, fallback to opening in new tab if download fails
+  try {
+    link.click()
+  } catch {
+    // Fallback: open in new tab
+    window.open('/whitepaper.pdf', '_blank')
+  }
+}
 
 const menuItems = [
   {
@@ -44,7 +61,9 @@ const NavBar = () => {
             <Button
               variant='outline'
               className='text-white rounded-4xl hover:bg-primary/15 hover:text-white transition-all duration-300'
+              onClick={handleWhitePaperDownload}
             >
+              <Download className='w-4 h-4' />
               WhitePaper
             </Button>
           </div>
@@ -92,7 +111,8 @@ const NavBarMobile = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             </ul>
           </div>
           <div className='flex gap-2 items-center'>
-            <Button variant='outline' className='text-white rounded-4xl w-full'>
+            <Button variant='outline' className='text-white rounded-4xl w-full' onClick={handleWhitePaperDownload}>
+              <Download className='w-4 h-4' />
               WhitePaper
             </Button>
           </div>
