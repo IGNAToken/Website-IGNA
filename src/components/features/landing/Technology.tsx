@@ -1,7 +1,7 @@
 import Badge from '@/components/shared/Badge'
 import Card from '@/components/shared/Card'
 import SectionTitle from '@/components/shared/SectionTitle'
-import { BrushCleaning } from 'lucide-react'
+import { BatteryCharging, Recycle, RefreshCw } from 'lucide-react'
 
 const Technology = () => {
   return (
@@ -17,7 +17,7 @@ const Technology = () => {
           description='Pyrolysis converts plastic waste that is difficult to recycle with conventional methods into valuable raw materials with minimal harmful emissions, preventing plastic waste from ending up in dumpsites.'
           icon={
             <>
-              <BrushCleaning className='size-8 ' />
+              <Recycle className='size-8 ' />
             </>
           }
         />
@@ -26,7 +26,7 @@ const Technology = () => {
           description='Through thermal decomposition, pyrolysis recovers energy-rich products like pyrolysis oil, syngas, and char, ideal for use in power generation, agriculture, chemical and paint industry.'
           icon={
             <>
-              <BrushCleaning className='size-8 ' />
+              <BatteryCharging className='size-8 ' />
             </>
           }
         />
@@ -35,7 +35,7 @@ const Technology = () => {
           description='Operating without oxygen, pyrolysis drastically reduces CO₂ emissions and plays a key role in supporting circular economy by turning huge amount of plastic waste into reusable resources.'
           icon={
             <>
-              <BrushCleaning className='size-8 ' />
+              <RefreshCw className='size-8 ' />
             </>
           }
         />
