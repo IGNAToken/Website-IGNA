@@ -1,4 +1,5 @@
 import Badge from '@/components/shared/Badge'
+import ContentSanitizer from '@/components/shared/ContentSanitizer'
 import SectionTitle from '@/components/shared/SectionTitle'
 import withLoading from '@/components/shared/withLoading'
 import { Accordion, AccordionItem } from '@/components/ui/accordion'
@@ -17,7 +18,7 @@ const FAQSection = () => {
   )
 }
 
-function FAQContent({ faqs }: { faqs: FAQ[] }) {
+export function FAQContent({ faqs }: { faqs: FAQ[] }) {
   return (
     <div className='flex flex-col gap-4 max-w-xl w-full'>
       {faqs
@@ -26,7 +27,9 @@ function FAQContent({ faqs }: { faqs: FAQ[] }) {
           <Accordion type='single' collapsible key={index}>
             <AccordionItem className='border border-primary/10 rounded-lg px-8 py-2 bg-primary/2' value={faq.question}>
               <AccordionTrigger className='font-bold text-lg'>{faq.question}</AccordionTrigger>
-              <AccordionContent className='text-white/70'>{faq.answer}</AccordionContent>
+              <AccordionContent className='text-white/70'>
+                <ContentSanitizer content={faq.answer} />
+              </AccordionContent>
             </AccordionItem>
           </Accordion>
         ))}

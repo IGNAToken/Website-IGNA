@@ -26,7 +26,7 @@ const BlogPostContainer = ({
             description={post.abstract}
             imgURL={post.cover?.url || 'https://placehold.co/600x400'}
             date={post.date || post.publishedAt || ''}
-            postId={post.documentId}
+            slug={post.url_slug}
           />
         ))}
       </div>

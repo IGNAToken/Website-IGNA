@@ -10,5 +10,18 @@ export type Blog = {
   createdAt: string
   updatedAt: string
   publishedAt: string
+  url_slug: string
   cover: Media
+  blog_faqs: BlogFAQ[]
+}
+
+export type BlogFAQ = {
+  content: null
+  createdAt: string
+  documentId: string
+  id: number
+  publishedAt: string
+  question: string
+  updatedAt: string
+  rank: number
 }
