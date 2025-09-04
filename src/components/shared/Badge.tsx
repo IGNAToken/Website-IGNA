@@ -4,7 +4,7 @@ type Props = {
 
 const Badge = ({ children }: Props) => {
   return (
-    <div className='bg-background border border-primary/30 text-primary-foreground px-10 py-1 rounded-3xl w-fit min-w-[150px] text-center'>
+    <div className='bg-background border border-primary/30 text-primary-foreground px-4 md:px-10 py-1 rounded-3xl w-fit min-w-[120px] md:min-w-[150px] text-center'>
       {children}
     </div>
   )

@@ -54,12 +54,12 @@ const IntegratedTerminal = memo((props: { formProps: FormProps }) => {
   // }, [props])
 
   return (
-    <div className=' w-[365px] rounded-2xl text-white flex flex-col items-center mb-4 overflow-hidden mt-9'>
-      <div className='flex flex-col lg:flex-row h-full w-[365px] overflow-auto'>
-        <div className='w-[365px] h-full rounded-xl overflow-hidden flex justify-center'>
+    <div className='w-full max-w-[365px] rounded-2xl text-white flex flex-col items-center mb-4 overflow-hidden mt-9'>
+      <div className='flex flex-col lg:flex-row h-full w-full max-w-[365px] overflow-auto'>
+        <div className='w-full max-w-[365px] h-full rounded-xl overflow-hidden flex justify-center'>
           {/* Loading state */}
           {!isLoaded ? (
-            <div className='h-full w-[365px] mt-4 lg:mt-0 lg:ml-4 flex flex-col gap-10 items-center justify-center rounded-xl py-10'>
+            <div className='h-full w-full max-w-[365px] mt-4 lg:mt-0 lg:ml-4 flex flex-col gap-10 items-center justify-center rounded-xl py-10'>
               <Loader />
               <p className='text-white text-sm'>Loading...</p>
             </div>
@@ -67,7 +67,7 @@ const IntegratedTerminal = memo((props: { formProps: FormProps }) => {
 
           <div
             id='integrated-terminal'
-            className={`flex h-full w-[365px] overflow-auto justify-center bg-black rounded-xl ${!isLoaded ? 'hidden' : ''}`}
+            className={`flex h-full w-full max-w-[365px] overflow-auto justify-center bg-black rounded-xl ${!isLoaded ? 'hidden' : ''}`}
           />
         </div>
       </div>

@@ -81,7 +81,7 @@ const Contact = () => {
       <div className='flex flex-col items-center justify-center gap-4'>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='md:min-w-[400px] flex flex-col items-center justify-center gap-4 bg-black/50 p-10 rounded-lg backdrop-blur-sm border border-primary/20'
+          className='w-full max-w-[400px] flex flex-col items-center justify-center gap-4 bg-black/50 p-4 md:p-10 rounded-lg backdrop-blur-sm border border-primary/20'
         >
           <div className='w-full'>
             <Input
