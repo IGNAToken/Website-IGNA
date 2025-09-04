@@ -32,7 +32,7 @@ function NewsContent({ data }: { data: Blog[] }) {
           description={news.abstract}
           imgURL={news.cover?.url || 'https://placehold.co/600x400'}
           date={news.date || news.publishedAt || ''}
-          postId={news.documentId}
+          slug={news.url_slug}
         />
       ))}
     </div>

@@ -8,10 +8,10 @@ type Props = {
   imgURL: string
   date: string
   variant?: 'primary' | 'secondary'
-  postId: string
+  slug: string
 }
 
-const NewsCard = ({ title, description, imgURL, date, variant = 'primary', postId }: Props) => {
+const NewsCard = ({ title, description, imgURL, date, variant = 'primary', slug }: Props) => {
   return (
     <div
       className={`flex flex-col border rounded-lg  w-full max-w-xs ${
@@ -34,7 +34,7 @@ const NewsCard = ({ title, description, imgURL, date, variant = 'primary', postI
             className={`bg-secondary text-white ${variant === 'secondary' ? 'bg-secondary hover:bg-secondary/80' : 'bg-primary hover:bg-primary/80 text-background'}`}
             size='sm'
           >
-            <Link to='/blog/$postId' params={{ postId: postId }}>
+            <Link to='/blog/$slug' params={{ slug }}>
               Read more
             </Link>
           </Button>

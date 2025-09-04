@@ -3,7 +3,7 @@ import type { Blog } from '@/types/Blog'
 import { useQuery } from '@tanstack/react-query'
 
 type BlogPostApiResponse = {
-  data: Blog
+  data: Blog[]
   meta: {
     pagination: {
       page: number
@@ -14,15 +14,19 @@ type BlogPostApiResponse = {
   }
 }
 
-const useBlogPost = (postId: string) => {
+const fetchBlogPost = async (urlSlug: string) => {
+  return api.get<BlogPostApiResponse>('/api/blogs', {
+    params: {
+      populate: '*',
+      'filters[url_slug][$eq]': urlSlug,
+    },
+  })
+}
+
+const useBlogPost = (urlSlug: string) => {
   const { data, isLoading, error } = useQuery<BlogPostApiResponse>({
-    queryKey: ['blogPost', postId],
-    queryFn: () =>
-      api.get<BlogPostApiResponse>(`/api/blogs/${postId}`, {
-        params: {
-          populate: '*',
-        },
-      }),
+    queryKey: ['blogPost', urlSlug],
+    queryFn: () => fetchBlogPost(urlSlug),
   })
   return { data, isLoading, error }
 }
