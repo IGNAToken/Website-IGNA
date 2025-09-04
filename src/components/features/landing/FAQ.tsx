@@ -20,14 +20,16 @@ const FAQSection = () => {
 function FAQContent({ faqs }: { faqs: FAQ[] }) {
   return (
     <div className='flex flex-col gap-4 max-w-xl w-full'>
-      {faqs?.map((faq, index) => (
-        <Accordion type='single' collapsible key={index}>
-          <AccordionItem className='border border-primary/10 rounded-lg px-8 py-2 bg-primary/2' value={faq.question}>
-            <AccordionTrigger className='font-bold text-lg'>{faq.question}</AccordionTrigger>
-            <AccordionContent className='text-white/70'>{faq.answer}</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      ))}
+      {faqs
+        ?.sort((a, b) => a.id - b.id)
+        .map((faq, index) => (
+          <Accordion type='single' collapsible key={index}>
+            <AccordionItem className='border border-primary/10 rounded-lg px-8 py-2 bg-primary/2' value={faq.question}>
+              <AccordionTrigger className='font-bold text-lg'>{faq.question}</AccordionTrigger>
+              <AccordionContent className='text-white/70'>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ))}
     </div>
   )
 }
