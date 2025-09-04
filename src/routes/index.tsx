@@ -23,11 +23,11 @@ function Index() {
       <Technology />
       <Tokenomics />
       <TeamSection />
-      <FAQSection />
       <Socials />
       <Reasons />
       <News />
       <RoadmapSection />
+      <FAQSection />
       <Contact />
     </>
   )
