@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SwapRouteImport } from './routes/swap'
+import { Route as IgnaTokenomicsRouteImport } from './routes/igna-tokenomics'
 import { Route as HowToBuyIgnaRouteImport } from './routes/how-to-buy-igna'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
@@ -18,6 +19,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 const SwapRoute = SwapRouteImport.update({
   id: '/swap',
   path: '/swap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IgnaTokenomicsRoute = IgnaTokenomicsRouteImport.update({
+  id: '/igna-tokenomics',
+  path: '/igna-tokenomics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowToBuyIgnaRoute = HowToBuyIgnaRouteImport.update({
@@ -44,6 +50,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/how-to-buy-igna': typeof HowToBuyIgnaRoute
+  '/igna-tokenomics': typeof IgnaTokenomicsRoute
   '/swap': typeof SwapRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/how-to-buy-igna': typeof HowToBuyIgnaRoute
+  '/igna-tokenomics': typeof IgnaTokenomicsRoute
   '/swap': typeof SwapRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -59,21 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/how-to-buy-igna': typeof HowToBuyIgnaRoute
+  '/igna-tokenomics': typeof IgnaTokenomicsRoute
   '/swap': typeof SwapRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/how-to-buy-igna' | '/swap' | '/blog/$slug' | '/blog'
+  fullPaths:
+    | '/'
+    | '/how-to-buy-igna'
+    | '/igna-tokenomics'
+    | '/swap'
+    | '/blog/$slug'
+    | '/blog'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/how-to-buy-igna' | '/swap' | '/blog/$slug' | '/blog'
-  id: '__root__' | '/' | '/how-to-buy-igna' | '/swap' | '/blog/$slug' | '/blog/'
+  to:
+    | '/'
+    | '/how-to-buy-igna'
+    | '/igna-tokenomics'
+    | '/swap'
+    | '/blog/$slug'
+    | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/how-to-buy-igna'
+    | '/igna-tokenomics'
+    | '/swap'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   HowToBuyIgnaRoute: typeof HowToBuyIgnaRoute
+  IgnaTokenomicsRoute: typeof IgnaTokenomicsRoute
   SwapRoute: typeof SwapRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -86,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/swap'
       fullPath: '/swap'
       preLoaderRoute: typeof SwapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/igna-tokenomics': {
+      id: '/igna-tokenomics'
+      path: '/igna-tokenomics'
+      fullPath: '/igna-tokenomics'
+      preLoaderRoute: typeof IgnaTokenomicsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-buy-igna': {
@@ -122,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   HowToBuyIgnaRoute: HowToBuyIgnaRoute,
+  IgnaTokenomicsRoute: IgnaTokenomicsRoute,
   SwapRoute: SwapRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,

@@ -60,7 +60,7 @@ export default function BlogPostDisplay({
         {convertedFaqs.length > 0 && (
           <>
             <SectionTitle title='Quick FAQ' subtitle='' className='mt-10' />
-            <div className='flex justify-center mt-10'>
+            <div className='flex justify-center mt-6'>
               <FAQContent faqs={convertedFaqs} />
             </div>
           </>
