@@ -10,6 +10,7 @@ import RoadmapSection from '@/components/features/landing/Roadmap'
 import Contact from '@/components/features/landing/Contact'
 import { createFileRoute } from '@tanstack/react-router'
 import TeamSection from '@/components/features/landing/TeamSection'
+import Strategy from '@/components/features/landing/Strategy'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -23,6 +24,7 @@ function Index() {
       <Technology />
       <Tokenomics />
       <TeamSection />
+      <Strategy />
       <Socials />
       <Reasons />
       <News />
