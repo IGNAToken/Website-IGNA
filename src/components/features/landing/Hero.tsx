@@ -1,5 +1,6 @@
 import heroImage from '@/assets/hero-bg.png'
 import { Button } from '@/components/ui/button'
+import { DISCORD_URL } from '@/config'
 import { Link } from '@tanstack/react-router'
 
 const Hero = () => {
@@ -31,12 +32,14 @@ const Hero = () => {
             pioneering cryptocurrency.
           </p>
           <div className='flex gap-10 justify-center'>
-            <Button variant='outline' className='bg-background'>
-              Learn More
+            <Button variant='outline' className='bg-background' asChild>
+              <a href='#strategy'>Learn More</a>
             </Button>
-            <Link to='/swap'>
-              <Button className='font-bold'>BUY $IGNA</Button>
-            </Link>
+            <Button className='font-bold' asChild>
+              <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>
+                Join Discord
+              </a>
+            </Button>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import type { StrategyType } from '@/types/Strategy'
 
 const Strategy = () => {
   return (
-    <section className='flex flex-col items-center gap-12 px-4 mt-32'>
+    <section id='strategy' className='flex flex-col items-center gap-12 px-4 mt-32'>
       <Badge>Strategy</Badge>
       <SectionTitle title='Unveiling the Strategy of the IGNA Project' subtitle='' />
       <StrategyContentWithLoading />

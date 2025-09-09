@@ -18,7 +18,7 @@ const NewsCard = ({ title, description, imgURL, date, variant = 'primary', slug 
         variant === 'secondary' ? 'bg-secondary/5 border-secondary/10' : 'bg-primary/5 border-primary/10'
       }`}
     >
-      <img src={imgURL} alt={title} className='w-full h-full object-cover rounded-t-lg' />
+      <img src={imgURL} alt={title} className='w-full h-[200px] object-cover rounded-t-lg' />
       <div className='flex flex-col gap-2 p-4'>
         <div className={`text-sm ${variant === 'secondary' ? 'text-secondary' : 'text-primary'}`}>
           {new Date(date).toLocaleDateString('en-US', {
