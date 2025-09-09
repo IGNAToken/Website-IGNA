@@ -27,6 +27,10 @@ const Liquidity = () => {
         5% of oil revenue will be used to buy back IGNA tokens. For the first five pyrolysis plants, all repurchased
         tokens will be burned.
       </p>
+      <p className='flex gap-1'>
+        <span className='font-bold'>Wallet address:</span>
+        <span>A2s8AwoF2qCsWWc7u1Lm9p66EWbGBz4ZGdtM9R6Qjyt4</span>
+      </p>
     </div>
   )
 }
@@ -39,6 +43,10 @@ const Reserve = () => {
         sustainability of the token ecosystem. This pool is allocated to 7% of the total token supply and is
         strategically reserved for several key purposes like market stabilization, future development, partnerships and
         collaborations.
+      </p>
+      <p className='flex gap-1'>
+        <span className='font-bold'>Wallet address:</span>
+        <span>A8ovyCboRBFVzXNB2VtnccvDb24usLzSR6yd9K9JJneu</span>
       </p>
     </div>
   )
@@ -74,6 +82,10 @@ const Marketing = () => {
         enhancing its visibility across potential users, partners, and stakeholders. These resources are dedicated to
         optimize campaigns and advertisement performance aimed at raise awareness.
       </p>
+      <p className='flex gap-1'>
+        <span className='font-bold'>Wallet address:</span>
+        <span>9sQGv9VYbpNsmTo6Fmvo1Xet2acfPzYnuTkadkyQwAxs</span>
+      </p>
     </div>
   )
 }
@@ -96,6 +108,10 @@ const PrivateSale = () => {
         <span className='font-bold'>Release schedule:</span>
         <span>12-month monthly vesting</span>
       </div>
+      <p className='flex gap-1'>
+        <span className='font-bold'>Wallet address:</span>
+        <span>9sQGv9VYbpNsmTo6Fmvo1Xet2acfPzYnuTkadkyQwAxs</span>
+      </p>
       <div className='flex flex-col gap-2'>
         <span className='font-bold italic'>Supporter Token Packages</span>
         <span className='font-bold'>IGNA Tokens: 150,000,000</span>
@@ -135,6 +151,14 @@ const PrivateSale = () => {
           <p>Last date of token sale: 31st December 2025</p>
         </div>
       </div>
+      <p className='flex flex-col gap-1'>
+        <span className='font-bold'>Wallet addresses:</span>
+        <ul>
+          <li>DzoQhuYFQ5CDq9zQDi4fgPN4QoibnmMkzgpZm2xWJxra</li>
+          <li>CoaJfr7LMuub4hmUCyEpafiPDWkLGDpaspeR2fK8vwXR</li>
+          <li>2B6chmQBqjhSVgq3shNY3PLbRLyhWwFxdc6oHQ2uHHp1</li>
+        </ul>
+      </p>
     </div>
   )
 }
@@ -168,6 +192,21 @@ const Management = () => {
         equipment, organizing and executing plant construction, and managing global production logistics and technology
         transfer. The management is also committed to organizing and running donation and educational programs, which
         require significant resources, expertise, and tireless effort.
+      </p>
+      <p className='flex flex-col gap-1'>
+        <span className='font-bold'>Wallet addresses:</span>
+        <ol>
+          <li>C4417wPg9DdHf2DFkKHJAtCJnxTv6Tb774YuXDSg93t4</li>
+          <li>JBuxxhgXsaV7Cr66rvw6tZUhvkW8CnBA3u2fgECxCGzT</li>
+          <li>8ag5dhMLC3zdK4gs4ByAyyZJcfQXPHEUNf5JA8LALe3G</li>
+          <li>GTrgyxRXFZMajeEKFEwpFVPMiKnEPv6pWcGG2AeA1KoN</li>
+          <li>5kT7jFQ1PQwdE7KHPV1mFNu7Y2VJsjGzTrh6asYExD9y</li>
+          <li>58uek2L7wPcz58jSUwgRcLHftVVxKNpdp58YPECNhJGm</li>
+          <li>3Cv15dRPoLWGNbNycumETMMrHoBFVns8yniMmcGZHwnM</li>
+          <li>3EaUt8chh9c3cjDvPb5sx7HFEMUrk2cqJXrJPnUCQctM</li>
+          <li>AZoS3YT2x75Q8TM34qXwohfEQtXnYDFbcwtUGbHaKEko</li>
+          <li>CLLrWNysh13FygYbUKfQAzFKAkheTbBeeWffd7UB6hMJ</li>
+        </ol>
       </p>
     </div>
   )

@@ -1,7 +1,6 @@
 import heroImage from '@/assets/hero-bg.png'
 import { Button } from '@/components/ui/button'
 import { DISCORD_URL } from '@/config'
-import { Link } from '@tanstack/react-router'
 
 const Hero = () => {
   return (
