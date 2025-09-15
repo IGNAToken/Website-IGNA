@@ -6,7 +6,7 @@ const Hero = () => {
     <div className='hero-container'>
       {/* Background Image - Optimized for LCP */}
       <img
-        src='/src/assets/hero-bg.webp'
+        src='/hero-bg.webp'
         alt='hero'
         className='hero-bg-image'
         loading='eager'
