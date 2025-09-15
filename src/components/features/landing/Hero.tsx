@@ -1,12 +1,18 @@
-import heroImage from '@/assets/hero-bg.webp'
 import { Button } from '@/components/ui/button'
 import { DISCORD_URL } from '@/config'
 
 const Hero = () => {
   return (
     <div className='hero-container'>
-      {/* Background Image */}
-      <img src={heroImage} alt='hero' className='hero-bg-image' />
+      {/* Background Image - Optimized for LCP */}
+      <img
+        src='/src/assets/hero-bg.webp'
+        alt='hero'
+        className='hero-bg-image'
+        loading='eager'
+        fetchPriority='high'
+        decoding='sync'
+      />
 
       {/* Content Overlay */}
       <div className='hero-content-overlay'>

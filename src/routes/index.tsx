@@ -1,16 +1,28 @@
 import Hero from '@/components/features/landing/Hero'
-import Motto from '@/components/features/landing/Motto'
-import Technology from '@/components/features/landing/Technology'
-import Tokenomics from '@/components/features/landing/Tokenomics'
-import FAQSection from '@/components/features/landing/FAQ'
-import Socials from '@/components/features/landing/Socials'
-import Reasons from '@/components/features/landing/Reasons'
-import News from '@/components/features/landing/News'
-import RoadmapSection from '@/components/features/landing/Roadmap'
-import Contact from '@/components/features/landing/Contact'
 import { createFileRoute } from '@tanstack/react-router'
-import TeamSection from '@/components/features/landing/TeamSection'
-import Strategy from '@/components/features/landing/Strategy'
+import { lazy, Suspense } from 'react'
+import Loader from '@/components/shared/Loader'
+
+// Lazy load non-critical components below the fold
+const Motto = lazy(() => import('@/components/features/landing/Motto'))
+const Technology = lazy(
+  () => import('@/components/features/landing/Technology')
+)
+const Tokenomics = lazy(
+  () => import('@/components/features/landing/Tokenomics')
+)
+const FAQSection = lazy(() => import('@/components/features/landing/FAQ'))
+const Socials = lazy(() => import('@/components/features/landing/Socials'))
+const Reasons = lazy(() => import('@/components/features/landing/Reasons'))
+const News = lazy(() => import('@/components/features/landing/News'))
+const RoadmapSection = lazy(
+  () => import('@/components/features/landing/Roadmap')
+)
+const Contact = lazy(() => import('@/components/features/landing/Contact'))
+const TeamSection = lazy(
+  () => import('@/components/features/landing/TeamSection')
+)
+const Strategy = lazy(() => import('@/components/features/landing/Strategy'))
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -20,17 +32,25 @@ function Index() {
   return (
     <>
       <Hero />
-      <Motto />
-      <Technology />
-      <Tokenomics />
-      <TeamSection />
-      <Strategy />
-      <Socials />
-      <Reasons />
-      <News />
-      <RoadmapSection />
-      <FAQSection />
-      <Contact />
+      <Suspense
+        fallback={
+          <div className='flex justify-center items-center h-screen'>
+            <Loader />
+          </div>
+        }
+      >
+        <Motto />
+        <Technology />
+        <Tokenomics />
+        <TeamSection />
+        <Strategy />
+        <Socials />
+        <Reasons />
+        <News />
+        <RoadmapSection />
+        <FAQSection />
+        <Contact />
+      </Suspense>
     </>
   )
 }

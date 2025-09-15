@@ -19,4 +19,26 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    // Optimize for LCP
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['@tanstack/react-router'],
+          ui: ['@tanstack/react-query'],
+        },
+      },
+    },
+    // Enable compression
+    minify: 'terser',
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+  },
+  // Optimize dev server
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
 })

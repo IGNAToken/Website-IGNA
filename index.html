@@ -358,12 +358,52 @@
       .hero-container {
         contain: layout style paint;
       }
+
+      /* Additional LCP optimizations */
+      .hero-bg-image {
+        content-visibility: auto;
+        contain-intrinsic-size: 100vw 100vh;
+      }
+
+      /* Prevent layout shift during image load */
+      .hero-container::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: var(--color-background);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      /* Optimize text rendering */
+      .hero-subtitle,
+      .hero-main-title,
+      .hero-description {
+        font-display: swap;
+        text-rendering: optimizeSpeed;
+      }
     </style>
 
     <!-- Performance Optimization -->
     <link rel="preload" href="/src/main.tsx" as="script" />
     <link rel="preload" href="/src/index.css" as="style" />
-    <link rel="preload" href="/src/assets/hero-bg.webp" as="image" />
+    <link
+      rel="preload"
+      href="/src/assets/hero-bg.webp"
+      as="image"
+      fetchpriority="high"
+    />
+
+    <!-- Font Preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Additional Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
     <script src="https://plugin.jup.ag/plugin-v1.js" defer></script>
 
