@@ -4,44 +4,41 @@ import { DISCORD_URL } from '@/config'
 
 const Hero = () => {
   return (
-    <div className='w-full h-[calc(100vh-100px)] bg-background relative overflow-hidden'>
+    <div className='hero-container'>
       {/* Background Image */}
-      <img
-        src={heroImage}
-        alt='hero'
-        className='w-full h-full object-cover absolute inset-0 z-0'
-      />
+      <img src={heroImage} alt='hero' className='hero-bg-image' />
 
       {/* Content Overlay */}
-      <div className='relative z-10 h-full flex items-center justify-center'>
-        <div className='text-center max-w-4xl mx-auto px-4 flex flex-col gap-6 '>
-          <h2 className='text-xl md:text-4xl font-light text-white drop-shadow-lg'>
-            TURN POLLUTION INTO SOLUTION
-          </h2>
-          <div className='text-4xl md:text-6xl font-black text-primary drop-shadow-lg flex flex-col md:flex-row gap-3 '>
-            <div className='flex gap-3 justify-center'>
+      <div className='hero-content-overlay'>
+        <div className='hero-content-container'>
+          <h2 className='hero-subtitle'>TURN POLLUTION INTO SOLUTION</h2>
+          <div className='hero-main-title'>
+            <div className='hero-title-row'>
               Transform
-              <span className='bg-gradient-to-r to-secondary from-primary-foreground bg-clip-text text-transparent'>
-                Waste
-              </span>
+              <span className='hero-gradient-text'>Waste</span>
             </div>
-            <div className='flex gap-3 justify-center'>
+            <div className='hero-title-row'>
               into
-              <span className='bg-gradient-to-r to-secondary from-primary-foreground bg-clip-text text-transparent'>
-                Wealth
-              </span>
+              <span className='hero-gradient-text'>Wealth</span>
             </div>
           </div>
-          <p className='text-xl text-white/90 font-light drop-shadow-md max-w-2xl mx-auto'>
+          <p className='hero-description'>
             Join the revolutionary movement to turn plastic waste into a
             profitable investment with the help of our pioneering
             cryptocurrency.
           </p>
-          <div className='flex gap-10 justify-center'>
-            <Button variant='outline' className='bg-background' asChild>
+          <div className='hero-buttons-container'>
+            <Button
+              variant='outline'
+              className='bg-background hero-button hero-button-outline'
+              asChild
+            >
               <a href='#strategy'>Learn More</a>
             </Button>
-            <Button className='font-bold' asChild>
+            <Button
+              className='font-bold hero-button hero-button-default'
+              asChild
+            >
               <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>
                 Join Discord
               </a>
