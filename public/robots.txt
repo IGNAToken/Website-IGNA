@@ -1,15 +1,24 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://igna.com/sitemap.xml
 
-# Block access to admin or sensitive areas (if any)
+# Disallow admin or private areas
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /dist/
+Disallow: /.env
+Disallow: /.git/
 
-# Allow all other content
+# Allow all public content
 Allow: /blog/
+Allow: /swap
 Allow: /how-to-buy-igna
 Allow: /igna-tokenomics
-Allow: /swap
+Allow: /favicon/
+Allow: /assets/
