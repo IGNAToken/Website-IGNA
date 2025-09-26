@@ -44,9 +44,12 @@ const Contact = () => {
     }
 
     try {
-      const response = await api.post<{ status: number }>('/api/contact-forms', {
-        data: { ...data, captchaToken },
-      })
+      const response = await api.post<{ status: number }>(
+        '/api/contact-forms',
+        {
+          data: { ...data, captchaToken },
+        }
+      )
       console.log('response', response)
       if (response) {
         reset()
@@ -71,7 +74,10 @@ const Contact = () => {
   }, [formStatus])
 
   return (
-    <section className='flex flex-col items-center justify-center gap-12 px-4 mt-32 relative mb-20'>
+    <section
+      id='contact'
+      className='flex flex-col items-center justify-center gap-12 px-4 mt-32 relative mb-20'
+    >
       <div className='absolute top-0 left-0 md:w-4/5 w-full h-full flex items-center'>
         <img src={background} alt='contact' />
       </div>
@@ -89,11 +95,16 @@ const Contact = () => {
               placeholder='Name'
               {...register('name', {
                 required: 'Name is required',
-                minLength: { value: 2, message: 'Name must be at least 2 characters' },
+                minLength: {
+                  value: 2,
+                  message: 'Name must be at least 2 characters',
+                },
               })}
               className={errors.name ? 'border-red-500' : ''}
             />
-            {errors.name && <p className='text-red-500 text-sm mt-1'>{errors.name.message}</p>}
+            {errors.name && (
+              <p className='text-red-500 text-sm mt-1'>{errors.name.message}</p>
+            )}
           </div>
 
           <div className='w-full'>
@@ -109,7 +120,11 @@ const Contact = () => {
               })}
               className={errors.email ? 'border-red-500' : ''}
             />
-            {errors.email && <p className='text-red-500 text-sm mt-1'>{errors.email.message}</p>}
+            {errors.email && (
+              <p className='text-red-500 text-sm mt-1'>
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           <div className='w-full'>
@@ -117,21 +132,41 @@ const Contact = () => {
               placeholder='Message'
               {...register('message', {
                 required: 'Message is required',
-                minLength: { value: 10, message: 'Message must be at least 10 characters' },
+                minLength: {
+                  value: 10,
+                  message: 'Message must be at least 10 characters',
+                },
               })}
               className={errors.message ? 'border-red-500' : ''}
             />
-            {errors.message && <p className='text-red-500 text-sm mt-1'>{errors.message.message}</p>}
+            {errors.message && (
+              <p className='text-red-500 text-sm mt-1'>
+                {errors.message.message}
+              </p>
+            )}
           </div>
 
-          <ReCAPTCHAComponent sitekey={RECAPTCHA_SITE_KEY} ref={captchaRef} onChange={handleCaptchaChange} />
-          {captchaStatus && <p className='text-red-500 text-sm mt-1'>{captchaStatus}</p>}
+          <ReCAPTCHAComponent
+            sitekey={RECAPTCHA_SITE_KEY}
+            ref={captchaRef}
+            onChange={handleCaptchaChange}
+          />
+          {captchaStatus && (
+            <p className='text-red-500 text-sm mt-1'>{captchaStatus}</p>
+          )}
 
-          <Button type='submit' className='mt-4' size='sm' disabled={isSubmitting}>
+          <Button
+            type='submit'
+            className='mt-4'
+            size='sm'
+            disabled={isSubmitting}
+          >
             {isSubmitting ? 'Sending...' : 'Submit'}
           </Button>
           {formStatus && (
-            <p className={`${formStatus.includes('success') ? 'text-green-500' : 'text-red-500'} text-sm mt-1`}>
+            <p
+              className={`${formStatus.includes('success') ? 'text-green-500' : 'text-red-500'} text-sm mt-1`}
+            >
               {formStatus}
             </p>
           )}

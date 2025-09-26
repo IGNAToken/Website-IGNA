@@ -311,6 +311,9 @@ const Tokenomics = () => {
         className='flex gap-2 bg-gradient-to-r from-primary to-[#00FFFD] px-4 py-3 rounded-lg w-fit items-center cursor-pointer hover:opacity-80 transition-opacity'
         onClick={handleCopyAddress}
         title='Click to copy contract address'
+        aria-label='Click to copy contract address'
+        role='button'
+        id='contract-address'
       >
         <span className='text-black font-bold uppercase'>CA:</span>
         <span className='text-black font-bold'>{shortenAddress(IGNA_TOKEN_MINT)}</span>

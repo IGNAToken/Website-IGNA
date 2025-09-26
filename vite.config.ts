@@ -19,4 +19,31 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    // Optimize for mobile performance
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['@tanstack/react-router'],
+          ui: ['@tanstack/react-query'],
+          // Split large components into separate chunks
+          tokenomics: ['./src/components/features/landing/Tokenomics'],
+        },
+      },
+    },
+    // Enable compression
+    minify: 'terser',
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+    // Mobile optimizations
+    target: 'es2015',
+    cssCodeSplit: true,
+  },
+  // Optimize dev server
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
 })
