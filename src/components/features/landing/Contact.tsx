@@ -6,9 +6,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useForm } from 'react-hook-form'
 import { useEffect, useRef, useState } from 'react'
-import type { ReCAPTCHA } from 'react-google-recaptcha'
-import ReCAPTCHAComponent from 'react-google-recaptcha'
-import { RECAPTCHA_SITE_KEY } from '@/config'
+import LazyReCAPTCHA, { type LazyReCAPTCHARef } from '@/components/shared/LazyReCAPTCHA'
 import { api } from '@/api/axios'
 
 interface IContactFormData {
@@ -20,7 +18,7 @@ interface IContactFormData {
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const captchaRef = useRef<ReCAPTCHA>(null)
+  const captchaRef = useRef<LazyReCAPTCHARef>(null)
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
   const [captchaStatus, setCaptchaStatus] = useState<string | null>(null)
 
@@ -44,12 +42,9 @@ const Contact = () => {
     }
 
     try {
-      const response = await api.post<{ status: number }>(
-        '/api/contact-forms',
-        {
-          data: { ...data, captchaToken },
-        }
-      )
+      const response = await api.post<{ status: number }>('/api/contact-forms', {
+        data: { ...data, captchaToken },
+      })
       console.log('response', response)
       if (response) {
         reset()
@@ -74,10 +69,7 @@ const Contact = () => {
   }, [formStatus])
 
   return (
-    <section
-      id='contact'
-      className='flex flex-col items-center justify-center gap-12 px-4 mt-32 relative mb-20'
-    >
+    <section id='contact' className='flex flex-col items-center justify-center gap-12 px-4 mt-32 relative mb-20'>
       <div className='absolute top-0 left-0 md:w-4/5 w-full h-full flex items-center'>
         <img src={background} alt='contact' />
       </div>
@@ -102,9 +94,7 @@ const Contact = () => {
               })}
               className={errors.name ? 'border-red-500' : ''}
             />
-            {errors.name && (
-              <p className='text-red-500 text-sm mt-1'>{errors.name.message}</p>
-            )}
+            {errors.name && <p className='text-red-500 text-sm mt-1'>{errors.name.message}</p>}
           </div>
 
           <div className='w-full'>
@@ -120,11 +110,7 @@ const Contact = () => {
               })}
               className={errors.email ? 'border-red-500' : ''}
             />
-            {errors.email && (
-              <p className='text-red-500 text-sm mt-1'>
-                {errors.email.message}
-              </p>
-            )}
+            {errors.email && <p className='text-red-500 text-sm mt-1'>{errors.email.message}</p>}
           </div>
 
           <div className='w-full'>
@@ -139,34 +125,17 @@ const Contact = () => {
               })}
               className={errors.message ? 'border-red-500' : ''}
             />
-            {errors.message && (
-              <p className='text-red-500 text-sm mt-1'>
-                {errors.message.message}
-              </p>
-            )}
+            {errors.message && <p className='text-red-500 text-sm mt-1'>{errors.message.message}</p>}
           </div>
 
-          <ReCAPTCHAComponent
-            sitekey={RECAPTCHA_SITE_KEY}
-            ref={captchaRef}
-            onChange={handleCaptchaChange}
-          />
-          {captchaStatus && (
-            <p className='text-red-500 text-sm mt-1'>{captchaStatus}</p>
-          )}
+          <LazyReCAPTCHA ref={captchaRef} onChange={handleCaptchaChange} />
+          {captchaStatus && <p className='text-red-500 text-sm mt-1'>{captchaStatus}</p>}
 
-          <Button
-            type='submit'
-            className='mt-4'
-            size='sm'
-            disabled={isSubmitting}
-          >
+          <Button type='submit' className='mt-4' size='sm' disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Submit'}
           </Button>
           {formStatus && (
-            <p
-              className={`${formStatus.includes('success') ? 'text-green-500' : 'text-red-500'} text-sm mt-1`}
-            >
+            <p className={`${formStatus.includes('success') ? 'text-green-500' : 'text-red-500'} text-sm mt-1`}>
               {formStatus}
             </p>
           )}
