@@ -13,11 +13,11 @@ const News = () => {
       <Badge>News & Blog</Badge>
       <SectionTitle title="Don't miss the most recent updates" subtitle='' />
       <NewsContentWithLoader />
-      <Button className='bg-transparent text-white border border-secondary hover:bg-secondary/20' size='lg'>
-        <Link to='/blog' className='text-secondary'>
+      <Link to='/blog'>
+        <Button className='bg-transparent text-secondary border border-secondary hover:bg-secondary/20' size='lg'>
           View all news
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </section>
   )
 }
