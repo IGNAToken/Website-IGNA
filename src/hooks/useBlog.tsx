@@ -33,6 +33,7 @@ const fetchBlogs = async ({
       'pagination[pageSize]': pageSize,
       'pagination[page]': pageParam,
       filters,
+      sort: 'publishedAt:desc',
     },
   })
 }
