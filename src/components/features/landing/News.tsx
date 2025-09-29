@@ -10,7 +10,7 @@ import type { Blog } from '@/types/Blog'
 const News = () => {
   return (
     <section className='flex flex-col items-center justify-center gap-12 px-4 mt-32'>
-      <Badge>News</Badge>
+      <Badge>News & Blog</Badge>
       <SectionTitle title="Don't miss the most recent updates" subtitle='' />
       <NewsContentWithLoader />
       <Button className='bg-transparent text-white border border-secondary hover:bg-secondary/20' size='lg'>
