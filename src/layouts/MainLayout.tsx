@@ -39,6 +39,32 @@ const MainLayout = ({ children }: Props) => {
     }
   }, [children, location.pathname])
 
+  // Handle hash navigation
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      const hash = window.location.hash
+      if (hash) {
+        // Wait for content to be rendered
+        setTimeout(() => {
+          const element = document.querySelector(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+      }
+    }
+
+    // Handle initial hash
+    handleHashNavigation()
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashNavigation)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation)
+    }
+  }, [])
+
   return (
     <div className={`bg-background text-white flex flex-col min-h-screen justify-between relative`}>
       {/* Curtain overlay */}
