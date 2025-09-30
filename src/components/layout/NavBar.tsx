@@ -31,7 +31,7 @@ const menuItems = [
     to: '/swap',
   },
   {
-    label: 'Blog',
+    label: 'News & Blog',
     to: '/blog',
   },
 ]

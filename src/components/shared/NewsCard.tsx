@@ -13,10 +13,12 @@ type Props = {
 
 const NewsCard = ({ title, description, imgURL, date, variant = 'primary', slug }: Props) => {
   return (
-    <div
+    <Link
       className={`flex flex-col border rounded-lg  w-full max-w-xs ${
         variant === 'secondary' ? 'bg-secondary/5 border-secondary/10' : 'bg-primary/5 border-primary/10'
       }`}
+      to='/blog/$slug'
+      params={{ slug }}
     >
       <img src={imgURL} alt={title} className='w-full h-[200px] object-cover rounded-t-lg' />
       <div className='flex flex-col gap-2 p-4'>
@@ -40,7 +42,7 @@ const NewsCard = ({ title, description, imgURL, date, variant = 'primary', slug 
           </Button>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

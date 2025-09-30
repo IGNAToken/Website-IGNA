@@ -1,7 +1,9 @@
 import NavBar from '@/components/layout/NavBar'
 import Footer from '@/components/layout/Footer'
+import CookieConsent from '@/components/shared/CookieConsent'
 import { useLocation } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
+import { useAnalytics } from '@/hooks/useAnalytics'
 
 type Props = {
   children: React.ReactNode
@@ -13,6 +15,9 @@ const MainLayout = ({ children }: Props) => {
   const [curtainPhase, setCurtainPhase] = useState<'idle' | 'covering' | 'revealing'>('idle')
   const [displayedChildren, setDisplayedChildren] = useState(children)
   const prevPathRef = useRef(location.pathname)
+
+  // Initialize analytics tracking
+  useAnalytics()
 
   useEffect(() => {
     if (location.pathname !== prevPathRef.current) {
@@ -34,6 +39,32 @@ const MainLayout = ({ children }: Props) => {
     }
   }, [children, location.pathname])
 
+  // Handle hash navigation
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      const hash = window.location.hash
+      if (hash) {
+        // Wait for content to be rendered
+        setTimeout(() => {
+          const element = document.querySelector(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+      }
+    }
+
+    // Handle initial hash
+    handleHashNavigation()
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashNavigation)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation)
+    }
+  }, [])
+
   return (
     <div className={`bg-background text-white flex flex-col min-h-screen justify-between relative`}>
       {/* Curtain overlay */}
@@ -53,6 +84,7 @@ const MainLayout = ({ children }: Props) => {
         </div>
       </div>
       <Footer />
+      <CookieConsent />
     </div>
   )
 }
