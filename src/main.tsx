@@ -1,12 +1,20 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import { ErrorComponent, RouterProvider, createRouter } from '@tanstack/react-router'
+import {
+  ErrorComponent,
+  RouterProvider,
+  createRouter,
+} from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 import Loader from './components/shared/Loader'
+import { initConsentMode } from './lib/analytics'
+
+// Initialize Consent Mode V2 early
+initConsentMode()
 
 // Create a new router instance
 const router = createRouter({
