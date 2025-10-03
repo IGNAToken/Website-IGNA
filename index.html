@@ -2,7 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google Analytics initialization now handled by consent-aware script -->
+    <!-- GA4 base script -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R0RG0V3ETJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      // Consent defaults (block everything until user accepts)
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      })
+
+      // Initialize GA4 (this won’t actually send until consent changes)
+      gtag('config', 'G-R0RG0V3ETJ')
+    </script>
     <!-- Primary Meta Tags -->
     <title>IGNA Token - Revolutionary Cryptocurrency</title>
     <meta name="title" content="IGNA Token - Revolutionary Cryptocurrency" />
