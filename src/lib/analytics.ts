@@ -65,10 +65,7 @@ export const initConsentMode = () => {
     document.head.appendChild(script)
 
     // Configure Google Analytics
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_title: document.title,
-      page_location: window.location.href,
-    })
+    window.gtag('config', GA_MEASUREMENT_ID)
     console.log('Google Analytics configured with consent mode')
   } else {
     console.warn(

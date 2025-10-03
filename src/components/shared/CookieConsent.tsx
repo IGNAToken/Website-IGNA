@@ -3,7 +3,6 @@ import { initGA, updateConsentState } from '@/lib/analytics'
 
 const CookieConsent = () => {
   const [showConsent, setShowConsent] = useState(false)
-  const [, setConsentGiven] = useState<boolean | null>(null)
 
   useEffect(() => {
     // Check if user has already given consent
@@ -12,8 +11,12 @@ const CookieConsent = () => {
       setShowConsent(true)
     } else {
       const accepted = consent === 'accepted'
-      setConsentGiven(accepted)
       // Update consent state based on stored preference
+      window.gtag('event', 'page_view', {
+        page_path: window.location.pathname,
+        page_title: document.title,
+        page_location: window.location.href,
+      })
       updateConsentState(accepted)
       if (accepted) {
         initGA()
@@ -23,7 +26,11 @@ const CookieConsent = () => {
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
-    setConsentGiven(true)
+    window.gtag('event', 'page_view', {
+      page_path: window.location.pathname,
+      page_title: document.title,
+      page_location: window.location.href,
+    })
     setShowConsent(false)
     // Update Consent Mode V2 to grant permissions
     updateConsentState(true)
@@ -33,7 +40,6 @@ const CookieConsent = () => {
 
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'declined')
-    setConsentGiven(false)
     setShowConsent(false)
     // Update Consent Mode V2 to deny permissions
     updateConsentState(false)
