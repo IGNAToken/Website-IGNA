@@ -27,40 +27,25 @@ interface ConsentState {
   ad_personalization: 'granted' | 'denied'
 }
 
-// Initialize Google Analytics (requires initConsentMode to be called first)
+// Legacy function - Google Analytics is now initialized in initConsentMode()
 export const initGA = () => {
-  if (!GA_MEASUREMENT_ID) {
-    console.warn('Google Analytics Measurement ID not found')
-    return
-  }
-
-  if (!window.gtag) {
-    console.warn('gtag not initialized. Call initConsentMode() first.')
-    return
-  }
-
-  // Load gtag script
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  document.head.appendChild(script)
-
-  // Configure Google Analytics
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    page_title: document.title,
-    page_location: window.location.href,
-  })
+  // Google Analytics is now initialized automatically in initConsentMode()
+  // This function is kept for backward compatibility
+  console.log('Google Analytics is already initialized via consent mode')
 }
 
 // Initialize Consent Mode V2 early in page load process
 export const initConsentMode = () => {
+  console.log('Initializing Consent Mode V2...')
+  console.log('GA_MEASUREMENT_ID:', GA_MEASUREMENT_ID)
+
   // Initialize dataLayer early if not already done
   window.dataLayer = window.dataLayer || []
   window.gtag = function (...args: unknown[]) {
     window.dataLayer.push(args)
   }
 
-  // Set default consent state (denied by default)
+  // Set default consent state (denied by default for first-time users)
   const defaultConsent: ConsentState = {
     analytics_storage: 'denied',
     ad_storage: 'denied',
@@ -71,8 +56,29 @@ export const initConsentMode = () => {
   window.gtag('consent', 'default', defaultConsent)
   window.gtag('js', new Date())
 
+  // Load Google Analytics script first (with denied consent)
+  if (GA_MEASUREMENT_ID) {
+    console.log('Loading Google Analytics script...')
+    const script = document.createElement('script')
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+    document.head.appendChild(script)
+
+    // Configure Google Analytics
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_title: document.title,
+      page_location: window.location.href,
+    })
+    console.log('Google Analytics configured with consent mode')
+  } else {
+    console.warn(
+      'GA_MEASUREMENT_ID not found! Set VITE_GA_MEASUREMENT_ID environment variable.'
+    )
+  }
+
   // Check for existing consent and update if needed
   const consent = localStorage.getItem('cookie-consent')
+  console.log('Existing consent:', consent)
   if (consent === 'accepted') {
     updateConsentState(true)
   }
@@ -92,6 +98,7 @@ export const updateConsentState = (accepted: boolean) => {
     ad_personalization: accepted ? 'granted' : 'denied',
   }
 
+  console.log('Updating consent state:', consentState)
   window.gtag('consent', 'update', consentState)
 }
 
