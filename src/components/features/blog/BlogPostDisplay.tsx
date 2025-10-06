@@ -44,7 +44,7 @@ export default function BlogPostDisplay({
             {backButtonText}
           </Link>
         )}
-        <h2 className='text-2xl font-bold my-4'>{post.title}</h2>
+        <h1 className='text-2xl font-bold my-4'>{post.title}</h1>
         <img src={post.cover?.url} alt={post.title} className='w-full max-h-[400px] object-cover rounded-lg' />
         <p className='text-md text-white/75 my-4'>
           {new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -54,7 +54,7 @@ export default function BlogPostDisplay({
           })}
         </p>
         <div className='my-2 border-b border-primary' />
-        <p className='text-sm font-medium text-white'>{post.abstract}</p>
+        <summary className='text-sm font-medium text-white'>{post.abstract}</summary>
         <div className='my-2 border-b border-primary' />
         <ContentSanitizer content={post.content} />
         {convertedFaqs.length > 0 && (
