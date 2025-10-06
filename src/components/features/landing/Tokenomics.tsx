@@ -3,7 +3,7 @@ import Badge from '@/components/shared/Badge'
 import { IGNA_TOKEN_MINT } from '@/config'
 import { shortenAddress } from '@/lib/stringHelpers'
 import RadialChart from '@/components/shared/RadialChart'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Liquidity = () => {
   return (
@@ -264,6 +264,32 @@ const Tokenomics = () => {
       console.error('Failed to copy address:', err)
     }
   }
+
+  // Ensure the contract address element is available for hash navigation
+  useEffect(() => {
+    const checkHashNavigation = () => {
+      if (window.location.hash === '#contract-address') {
+        const element = document.getElementById('contract-address')
+        if (element) {
+          // Small delay to ensure smooth scrolling
+          setTimeout(() => {
+            const headerHeight = 80
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight
+            window.scrollTo({
+              top: elementPosition,
+              behavior: 'smooth',
+            })
+          }, 100)
+        }
+      }
+    }
+
+    // Check immediately and after a short delay
+    checkHashNavigation()
+    const timeoutId = setTimeout(checkHashNavigation, 500)
+
+    return () => clearTimeout(timeoutId)
+  }, [])
 
   return (
     <section className='flex flex-col items-center gap-12 px-4 mt-32 bg-cover bg-center max-w-full'>
