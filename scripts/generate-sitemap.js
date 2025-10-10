@@ -74,15 +74,17 @@ const STATIC_ROUTES = [
     changefreq: 'monthly',
     lastmod: new Date().toISOString().split('T')[0],
   },
+  // Note: The following standalone routes are the canonical URLs
+  // The /blog/ versions will have lower priority and point to these as canonical
   {
     url: '/how-to-buy-igna',
-    priority: '0.7',
+    priority: '0.8', // High priority - this is the canonical URL
     changefreq: 'monthly',
     lastmod: new Date().toISOString().split('T')[0],
   },
   {
     url: '/igna-tokenomics',
-    priority: '0.7',
+    priority: '0.8', // High priority - this is the canonical URL
     changefreq: 'monthly',
     lastmod: new Date().toISOString().split('T')[0],
   },
@@ -124,11 +126,15 @@ function generateSitemap(blogPosts = []) {
   const urls = [...STATIC_ROUTES]
 
   // Add blog post URLs
+  // Posts that have standalone routes should have lower priority since the standalone route is canonical
+  const standaloneRouteSlugs = ['how-to-buy-igna', 'igna-tokenomics']
+
   blogPosts.forEach((post) => {
     if (post.url_slug) {
+      const hasStandaloneRoute = standaloneRouteSlugs.includes(post.url_slug)
       urls.push({
         url: `/blog/${post.url_slug}`,
-        priority: '0.6',
+        priority: hasStandaloneRoute ? '0.3' : '0.6', // Lower priority if standalone route exists
         changefreq: 'monthly',
         lastmod: post.updatedAt ? post.updatedAt.split('T')[0] : new Date().toISOString().split('T')[0],
       })

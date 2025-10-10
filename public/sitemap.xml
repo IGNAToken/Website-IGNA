@@ -22,13 +22,13 @@
     <loc>https://ignatoken.com/how-to-buy-igna</loc>
     <lastmod>2025-09-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/igna-tokenomics</loc>
     <lastmod>2025-09-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/blog/tokenomics-with-a-purpose-how-ignas-nonprofit-model-creates-real-world-value</loc>
@@ -46,7 +46,7 @@
     <loc>https://ignatoken.com/blog/how-to-buy-igna</loc>
     <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/blog/igna-tokenomics</loc>
@@ -64,6 +64,6 @@
     <loc>https://ignatoken.com/blog/new-tokenomics-strong-foundations</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
 </urlset>

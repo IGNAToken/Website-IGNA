@@ -1,6 +1,8 @@
 import BlogPostDisplay from '@/components/features/blog/BlogPostDisplay'
 import ErrorBlockWithLink from '@/components/shared/ErrorBlockWithLink'
 import Loader from '@/components/shared/Loader'
+import SEO from '@/components/shared/SEO'
+import { SITE_URL, standaloneRouteMap } from '@/config'
 import useBlogs from '@/hooks/useBlog'
 import useBlogPost from '@/hooks/useBlogPost'
 import { createFileRoute } from '@tanstack/react-router'
@@ -29,13 +31,26 @@ function RouteComponent() {
 
   const latestNewsData = latestNews?.pages.flatMap((page) => page.data) || []
 
+  // Map slugs that have standalone routes to their canonical URLs
+ 
+
+  const canonicalUrl = standaloneRouteMap[slug] || `${SITE_URL}/blog/${slug}`
+
   return (
-    <BlogPostDisplay
-      post={post}
-      latestNews={latestNewsData}
-      showBackButton={true}
-      backButtonText='Back to blog'
-      backButtonLink='/blog'
-    />
+    <>
+      <SEO
+        title={post.title}
+        description={post.abstract}
+        canonicalUrl={canonicalUrl}
+        ogImage={post.cover?.url || `${SITE_URL}/og_image/igna-social.webp`}
+      />
+      <BlogPostDisplay
+        post={post}
+        latestNews={latestNewsData}
+        showBackButton={true}
+        backButtonText='Back to blog'
+        backButtonLink='/blog'
+      />
+    </>
   )
 }
