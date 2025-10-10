@@ -32,8 +32,6 @@ function RouteComponent() {
   const latestNewsData = latestNews?.pages.flatMap((page) => page.data) || []
 
   // Map slugs that have standalone routes to their canonical URLs
- 
-
   const canonicalUrl = standaloneRouteMap[slug] || `${SITE_URL}/blog/${slug}`
 
   return (
@@ -43,6 +41,7 @@ function RouteComponent() {
         description={post.abstract}
         canonicalUrl={canonicalUrl}
         ogImage={post.cover?.url || `${SITE_URL}/og_image/igna-social.webp`}
+        keywords={post.meta_tags}
       />
       <BlogPostDisplay
         post={post}
