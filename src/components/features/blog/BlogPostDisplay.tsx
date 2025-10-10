@@ -44,7 +44,7 @@ export default function BlogPostDisplay({
             {backButtonText}
           </Link>
         )}
-        <h2 className='text-2xl font-bold my-4'>{post.title}</h2>
+        <h1 className='text-2xl font-bold my-4'>{post.title}</h1>
         <img src={post.cover?.url} alt={post.title} className='w-full max-h-[400px] object-cover rounded-lg' />
         <p className='text-md text-white/75 my-4'>
           {new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -68,7 +68,7 @@ export default function BlogPostDisplay({
       </div>
       {latestNews && latestNews.length > 0 && (
         <aside className='md:max-w-[300px] w-full md:mt-20 my-10'>
-          <h2 className='text-sm uppercase mb-4'>Latest News</h2>
+          <h3 className='text-sm uppercase mb-4'>Latest News</h3>
           <div className='flex flex-col gap-4'>
             {latestNews.map((news) => (
               <PostPreview key={news.id} imgURL={news.cover?.url} title={news.title} slug={news.url_slug} />
