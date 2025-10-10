@@ -2,67 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ignatoken.com/</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/blog</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/swap</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/how-to-buy-igna</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/igna-tokenomics</loc>
-    <lastmod>2025-09-26</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ignatoken.com/blog/tokenomics-with-a-purpose-how-ignas-nonprofit-model-creates-real-world-value</loc>
-    <lastmod>2025-09-25</lastmod>
+    <loc>https://ignatoken.com/blog/the-rise-of-refi-how-igna-brings-regenerative-finance-to-life</loc>
+    <lastmod>2025-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ignatoken.com/blog/why-do-i-see-warnings-when-buying-igna</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ignatoken.com/blog/how-to-buy-igna</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ignatoken.com/blog/igna-tokenomics</loc>
-    <lastmod>2025-09-09</lastmod>
+    <loc>https://ignatoken.com/blog/the-igna-projects-first-pyrolysis-plant-in-europe</loc>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/blog/our-first-pyrolysis-plant-is-on-the-way</loc>
-    <lastmod>2025-09-04</lastmod>
+    <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ignatoken.com/blog/new-tokenomics-strong-foundations</loc>
-    <lastmod>2025-09-04</lastmod>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ignatoken.com/blog/tokenomics-with-a-purpose</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ignatoken.com/blog/utility-tokens</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ignatoken.com/blog/warnings-buying-crypto</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ignatoken.com/blog/how-to-buy-igna</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ignatoken.com/blog/igna-tokenomics</loc>
+    <lastmod>2025-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
