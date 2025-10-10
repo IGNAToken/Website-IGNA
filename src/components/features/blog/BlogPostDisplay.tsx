@@ -68,7 +68,7 @@ export default function BlogPostDisplay({
       </div>
       {latestNews && latestNews.length > 0 && (
         <aside className='md:max-w-[300px] w-full md:mt-20 my-10'>
-          <h2 className='text-sm uppercase mb-4'>Latest News</h2>
+          <h3 className='text-sm uppercase mb-4'>Latest News</h3>
           <div className='flex flex-col gap-4'>
             {latestNews.map((news) => (
               <PostPreview key={news.id} imgURL={news.cover?.url} title={news.title} slug={news.url_slug} />

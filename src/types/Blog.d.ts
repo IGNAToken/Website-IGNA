@@ -13,6 +13,7 @@ export type Blog = {
   url_slug: string
   cover: Media
   blog_faqs: BlogFAQ[]
+  meta_tags: string
 }
 
 export type BlogFAQ = {

@@ -1,6 +1,8 @@
 import BlogPostDisplay from '@/components/features/blog/BlogPostDisplay'
 import ErrorBlockWithLink from '@/components/shared/ErrorBlockWithLink'
 import Loader from '@/components/shared/Loader'
+import SEO from '@/components/shared/SEO'
+import { SITE_URL } from '@/config'
 import useBlogs from '@/hooks/useBlog'
 import useBlogPost from '@/hooks/useBlogPost'
 import { createFileRoute } from '@tanstack/react-router'
@@ -29,12 +31,20 @@ function RouteComponent() {
 
   console.log('post', post)
   return (
-    <BlogPostDisplay
-      post={post}
-      latestNews={latestNewsData}
-      showBackButton={true}
-      backButtonText='Back to home'
-      backButtonLink='/'
-    />
+    <>
+      <SEO
+        title={post.title || 'IGNA Tokenomics'}
+        description={post.abstract || 'Learn about IGNA Token economics and distribution'}
+        canonicalUrl={`${SITE_URL}/igna-tokenomics`}
+        ogImage={post.cover?.url || `${SITE_URL}/og_image/igna-social.webp`}
+      />
+      <BlogPostDisplay
+        post={post}
+        latestNews={latestNewsData}
+        showBackButton={true}
+        backButtonText='Back to home'
+        backButtonLink='/'
+      />
+    </>
   )
 }
