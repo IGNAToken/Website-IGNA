@@ -37,15 +37,17 @@ try {
     })
     console.log('📄 Loaded environment variables from .env file')
   } else {
-    console.log('📄 No .env file found, using system environment variables only')
+    console.log(
+      '📄 No .env file found, using system environment variables only'
+    )
   }
 } catch (error) {
   console.warn('⚠️  Warning: Could not load .env file:', error.message)
 }
 
 // Configuration
-const SITE_URL = process.env.SITE_URL || 'https://igna.com'
-const API_URL = process.env.API_URL || process.env.VITE_API_URL || 'https://api.igna.com'
+const SITE_URL = process.env.SITE_URL || 'https://www.ignatoken.com'
+const API_URL = process.env.API_URL || process.env.VITE_API_URL || ''
 const OUTPUT_FILE = path.join(process.cwd(), 'public', 'sitemap.xml')
 
 console.log('Environment variables:')
@@ -136,7 +138,9 @@ function generateSitemap(blogPosts = []) {
         url: `/blog/${post.url_slug}`,
         priority: hasStandaloneRoute ? '0.3' : '0.6', // Lower priority if standalone route exists
         changefreq: 'monthly',
-        lastmod: post.updatedAt ? post.updatedAt.split('T')[0] : new Date().toISOString().split('T')[0],
+        lastmod: post.updatedAt
+          ? post.updatedAt.split('T')[0]
+          : new Date().toISOString().split('T')[0],
       })
     }
   })
