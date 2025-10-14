@@ -18,7 +18,7 @@ const Hero = () => {
       <div className='hero-content-overlay'>
         <div className='hero-content-container'>
           <h2 className='hero-subtitle'>TURN POLLUTION INTO SOLUTION</h2>
-          <div className='hero-main-title'>
+          <h1 className='hero-main-title'>
             <div className='hero-title-row'>
               Transform
               <span className='hero-gradient-text'>Waste</span>
@@ -27,12 +27,12 @@ const Hero = () => {
               into
               <span className='hero-gradient-text'>Wealth</span>
             </div>
-          </div>
-          <p className='hero-description'>
+          </h1>
+          <h3 className='hero-description'>
             Join the revolutionary movement to turn plastic waste into a
             profitable investment with the help of our pioneering
             cryptocurrency.
-          </p>
+          </h3>
           <div className='hero-buttons-container'>
             <Button
               variant='outline'
