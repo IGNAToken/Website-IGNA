@@ -6,7 +6,7 @@ export const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID
 export const DISCORD_URL = import.meta.env.VITE_DISCORD_URL || 'https://discord.gg/jpGRXzu92K'
 
-export const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://ignatoken.com'
+export const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.ignatoken.com'
 
 export const standaloneRouteMap: Record<string, string> = {
   'igna-tokenomics': `${SITE_URL}/igna-tokenomics`,
