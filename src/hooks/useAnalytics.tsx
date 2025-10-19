@@ -9,6 +9,7 @@ export const useAnalytics = () => {
   useEffect(() => {
     // Check if user has given consent
     const consent = localStorage.getItem('cookie-consent')
+    // Only track if consent is explicitly granted
     if (consent === 'accepted') {
       trackPageView(location.pathname)
     }

@@ -54,7 +54,7 @@ export default function BlogPostDisplay({
           })}
         </p>
         <div className='my-2 border-b border-primary' />
-        <p className='text-sm font-medium text-white'>{post.abstract}</p>
+        <summary className='text-sm font-medium text-white'>{post.abstract}</summary>
         <div className='my-2 border-b border-primary' />
         <ContentSanitizer content={post.content} />
         {convertedFaqs.length > 0 && (
