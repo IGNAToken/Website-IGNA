@@ -36,46 +36,86 @@ export default function BlogPostDisplay({
     })) || []
 
   return (
-    <div className='container mx-auto flex gap-4 flex-col md:flex-row px-2'>
-      <div className='flex-col flex-1 mb-10'>
-        {showBackButton && (
-          <Link to={backButtonLink} className='flex items-center gap-2 text-sm text-white/75 mt-4'>
-            <ArrowLeft className='size-4' />
-            {backButtonText}
-          </Link>
-        )}
-        <h1 className='text-2xl font-bold my-4'>{post.title}</h1>
-        <img src={post.cover?.url} alt={post.title} className='w-full max-h-[400px] object-cover rounded-lg' />
-        <p className='text-md text-white/75 my-4'>
-          {new Date(post.publishedAt).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </p>
-        <div className='my-2 border-b border-primary' />
-        <summary className='text-sm font-medium text-white'>{post.abstract}</summary>
-        <div className='my-2 border-b border-primary' />
-        <ContentSanitizer content={post.content} />
-        {convertedFaqs.length > 0 && (
-          <>
-            <SectionTitle title='Quick FAQ' subtitle='' className='mt-10' />
-            <div className='flex justify-center mt-6'>
-              <FAQContent faqs={convertedFaqs} />
+    <div className='container mx-auto max-w-6xl px-4 py-8'>
+      <div className='flex gap-8 flex-col lg:flex-row'>
+        <article className='flex-1'>
+          {showBackButton && (
+            <Link
+              to={backButtonLink}
+              className='inline-flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors duration-300 mb-8'
+            >
+              <ArrowLeft className='size-4' />
+              {backButtonText}
+            </Link>
+          )}
+
+          <header className='mb-8'>
+            <h1 className='text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight'>
+              {post.title}
+            </h1>
+
+            <div className='flex items-center gap-4 mb-6'>
+              <time className='text-sm text-white/60'>
+                {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
             </div>
-          </>
+
+            <div className='relative overflow-hidden rounded-2xl mb-8'>
+              <img
+                src={post.cover?.url}
+                alt={post.title}
+                className='w-full h-[400px] lg:h-[500px] object-cover'
+              />
+              <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
+            </div>
+          </header>
+
+          <div className='prose prose-lg prose-invert max-w-none'>
+            <div className='bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl mb-8'>
+              <summary className='text-lg font-medium text-white leading-relaxed list-none'>
+                {post.abstract}
+              </summary>
+            </div>
+
+            <div className='article-content'>
+              <ContentSanitizer content={post.content} />
+            </div>
+          </div>
+
+          {convertedFaqs.length > 0 && (
+            <section className='mt-16'>
+              <SectionTitle title='Quick FAQ' subtitle='' className='mb-8' />
+              <div className='flex justify-center'>
+                <FAQContent faqs={convertedFaqs} />
+              </div>
+            </section>
+          )}
+        </article>
+
+        {latestNews && latestNews.length > 0 && (
+          <aside className='lg:w-80 lg:flex-shrink-0'>
+            <div className='sticky top-8'>
+              <h3 className='text-xl font-semibold mb-6 text-white'>
+                Latest News
+              </h3>
+              <div className='space-y-4'>
+                {latestNews.map((news) => (
+                  <PostPreview
+                    key={news.id}
+                    imgURL={news.cover?.url}
+                    title={news.title}
+                    slug={news.url_slug}
+                  />
+                ))}
+              </div>
+            </div>
+          </aside>
         )}
       </div>
-      {latestNews && latestNews.length > 0 && (
-        <aside className='md:max-w-[300px] w-full md:mt-20 my-10'>
-          <h3 className='text-sm uppercase mb-4'>Latest News</h3>
-          <div className='flex flex-col gap-4'>
-            {latestNews.map((news) => (
-              <PostPreview key={news.id} imgURL={news.cover?.url} title={news.title} slug={news.url_slug} />
-            ))}
-          </div>
-        </aside>
-      )}
     </div>
   )
 }
