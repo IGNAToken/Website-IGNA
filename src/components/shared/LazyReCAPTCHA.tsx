@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle, useCallback } from 'react'
 import type { ReCAPTCHA } from 'react-google-recaptcha'
 import { RECAPTCHA_SITE_KEY } from '@/config'
 
@@ -15,7 +15,7 @@ export interface LazyReCAPTCHARef {
 const LazyReCAPTCHA = forwardRef<LazyReCAPTCHARef, LazyReCAPTCHAProps>(({ onChange, onLoad }, ref) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const [ReCAPTCHAComponent, setReCAPTCHAComponent] = useState<any>(null)
+  const [ReCAPTCHAComponent, setReCAPTCHAComponent] = useState<typeof ReCAPTCHA | null>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -32,7 +32,7 @@ const LazyReCAPTCHA = forwardRef<LazyReCAPTCHARef, LazyReCAPTCHAProps>(({ onChan
     },
   }))
 
-  const loadReCAPTCHA = async () => {
+  const loadReCAPTCHA = useCallback(async () => {
     if (isLoaded || isLoading) return
 
     setIsLoading(true)
@@ -46,7 +46,7 @@ const LazyReCAPTCHA = forwardRef<LazyReCAPTCHARef, LazyReCAPTCHAProps>(({ onChan
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [isLoaded, isLoading, onLoad])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,7 +68,7 @@ const LazyReCAPTCHA = forwardRef<LazyReCAPTCHARef, LazyReCAPTCHAProps>(({ onChan
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [loadReCAPTCHA])
 
   return (
     <div ref={containerRef} className='min-h-[78px] flex items-center justify-center'>

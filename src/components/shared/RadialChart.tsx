@@ -57,7 +57,7 @@ const RadialChart = ({ series, labels, colors = ['#00FF7F', '#05A7A6'], onItemCl
         show: false,
       },
       colors: colors,
-      labels: labels,
+    labels: labels,
       responsive: [
         {
           breakpoint: 480,
@@ -73,7 +73,7 @@ const RadialChart = ({ series, labels, colors = ['#00FF7F', '#05A7A6'], onItemCl
         },
       ],
     }),
-    [colors, labels]
+    [colors, labels, onItemClick]
   )
 
   return (

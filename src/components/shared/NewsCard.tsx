@@ -1,5 +1,4 @@
 import { truncate } from '@/lib/stringHelpers'
-import { Button } from '../ui/button'
 import { Link } from '@tanstack/react-router'
 
 type Props = {
@@ -11,14 +10,7 @@ type Props = {
   slug: string
 }
 
-const NewsCard = ({
-  title,
-  description,
-  imgURL,
-  date,
-  variant = 'primary',
-  slug,
-}: Props) => {
+const NewsCard = ({ title, description, imgURL, date, variant = 'primary', slug }: Props) => {
   return (
     <Link
       className={`group flex flex-col border rounded-xl w-full max-w-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
@@ -39,9 +31,7 @@ const NewsCard = ({
       </div>
 
       <div className='flex flex-col gap-3 p-6'>
-        <div
-          className={`text-sm font-medium ${variant === 'secondary' ? 'text-secondary' : 'text-primary'}`}
-        >
+        <div className={`text-sm font-medium ${variant === 'secondary' ? 'text-secondary' : 'text-primary'}`}>
           {new Date(date).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
@@ -53,9 +43,7 @@ const NewsCard = ({
           {title}
         </h3>
 
-        <p className='text-sm text-white/70 line-clamp-3 leading-relaxed'>
-          {truncate(description, 120)}
-        </p>
+        <p className='text-sm text-white/70 line-clamp-3 leading-relaxed'>{truncate(description, 120)}</p>
 
         <div className='flex justify-end mt-2'>
           <div
@@ -72,12 +60,7 @@ const NewsCard = ({
               stroke='currentColor'
               viewBox='0 0 24 24'
             >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M9 5l7 7-7 7'
-              />
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
             </svg>
           </div>
         </div>

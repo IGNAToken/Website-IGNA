@@ -71,7 +71,7 @@ const fetchNextPage = async <T>(
   return response
 }
 
-const post = async <T>(endpoint: string, data: any, config: AxiosRequestConfig) => {
+const post = async <T>(endpoint: string, data: unknown, config: AxiosRequestConfig) => {
   const response = await apiRequest<T>(endpoint, { ...config, method: 'POST', data })
   debug(`post ${endpoint}`, response)
   return response
@@ -80,7 +80,7 @@ const post = async <T>(endpoint: string, data: any, config: AxiosRequestConfig) 
 export const api = {
   get: <T>(endpoint: string, config?: AxiosRequestConfig) => apiRequest<T>(endpoint, { ...config, method: 'GET' }),
   getAll: <T>(endpoint: string, config?: AxiosRequestConfig) => fetchAllData<T>(endpoint, { ...config, method: 'GET' }),
-  post: <T>(endpoint: string, data: any, config?: AxiosRequestConfig) =>
+  post: <T>(endpoint: string, data: unknown, config?: AxiosRequestConfig) =>
     post<T>(endpoint, data, { ...config, method: 'POST' }),
   getNextPage: <T>(endpoint: string, paginationInfo: PaginationInfo, config?: AxiosRequestConfig) =>
     fetchNextPage<T>(endpoint, paginationInfo, { ...config, method: 'GET' }),

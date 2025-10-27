@@ -32,7 +32,6 @@ function withLoading<P extends object>(WrappedComponent: React.ComponentType<P>)
       )
     }
 
-    // @ts-ignore
     return <WrappedComponent {...(rest as P)} />
   }
 }
