@@ -8,7 +8,7 @@ import { useState } from 'react'
 const handleWhitePaperDownload = () => {
   // Create a link element to trigger download
   const link = document.createElement('a')
-  link.href = '/whitepaper.pdf' // PDF should be placed in public folder
+  link.href = '/docs/whitepaper.pdf' // PDF should be placed in public folder
   link.download = 'IGNA-Whitepaper.pdf'
   link.target = '_blank'
 
@@ -17,7 +17,7 @@ const handleWhitePaperDownload = () => {
     link.click()
   } catch {
     // Fallback: open in new tab
-    window.open('/whitepaper.pdf', '_blank')
+    window.open('/docs/whitepaper.pdf', '_blank')
   }
 }
 
@@ -33,6 +33,10 @@ const menuItems = [
   {
     label: 'News & Blog',
     to: '/blog',
+  },
+  {
+    label: 'Docs',
+    to: '/docs',
   },
 ]
 

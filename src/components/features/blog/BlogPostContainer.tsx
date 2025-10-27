@@ -18,7 +18,7 @@ const BlogPostContainer = ({
   const posts = data ?? []
   return (
     <>
-      <div className='flex flex-wrap gap-4 justify-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center'>
         {posts.map((post) => (
           <NewsCard
             key={post.id}
@@ -30,9 +30,14 @@ const BlogPostContainer = ({
           />
         ))}
       </div>
-      <div className='flex justify-center mt-6'>
+      <div className='flex justify-center mt-12'>
         {hasNextPage && (
-          <Button variant='outline' onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+          <Button
+            variant='outline'
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+            className='px-8 py-3 border-primary/30 hover:border-primary/60 hover:bg-primary/10 transition-all duration-300'
+          >
             {isFetchingNextPage ? 'Loading...' : 'Load More'}
           </Button>
         )}
@@ -41,7 +46,14 @@ const BlogPostContainer = ({
   )
 }
 const BlogPostContainerWithLoader = () => {
-  const { isLoading, error, fetchNextPage, hasNextPage, isFetchingNextPage, data } = useBlogs({ article: false })
+  const {
+    isLoading,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    data,
+  } = useBlogs({ article: false })
   const WrappedBlogPostContainer = withLoading(BlogPostContainer)
   return (
     <WrappedBlogPostContainer
