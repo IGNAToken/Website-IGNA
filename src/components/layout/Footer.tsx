@@ -30,7 +30,10 @@ const Footer = () => {
           <ul className='flex gap-4 text-sm'>
             {links.map((link) => (
               <li key={link.label}>
-                <Link to={link.href} className='hover:text-primary transition-colors text-white/80'>
+                <Link
+                  to={link.href}
+                  className='hover:text-primary transition-colors text-white/80'
+                >
                   {link.label}
                 </Link>
               </li>
@@ -43,6 +46,17 @@ const Footer = () => {
         <div className='flex flex-row gap-1'>
           <p>© 2025 IGNA Token. All rights reserved.</p>
           <p>v{version}</p>
+          <p>
+            Developed by{' '}
+            <a
+              href='https://www.gerikov.hu'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='hover:text-primary transition-colors text-white/80'
+            >
+              gerikov.hu
+            </a>
+          </p>
         </div>
         <div className='flex gap-2'>
           <p>Follow us</p>
