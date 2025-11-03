@@ -11,7 +11,7 @@ const PostPreview = ({ imgURL, title, slug }: Props) => {
     <Link
       to='/blog/$slug'
       params={{ slug }}
-      className='group flex gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 hover:scale-105'
+      className='group flex gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300'
     >
       <div className='w-20 h-20 overflow-hidden rounded-lg flex-shrink-0'>
         <img
