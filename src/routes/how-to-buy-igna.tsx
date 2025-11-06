@@ -29,12 +29,11 @@ function RouteComponent() {
   const post = data.data[0]
   const latestNewsData = latestNews?.pages.flatMap((page) => page.data) || []
 
-  console.log('post', post)
   return (
     <>
       <SEO
-        title={post.title || 'How to Buy IGNA Token'}
-        description={post.abstract || 'Learn how to purchase IGNA tokens step by step'}
+        title={post.meta_title || post.title}
+        description={post.meta_description || post.abstract}
         canonicalUrl={`${SITE_URL}/how-to-buy-igna`}
         ogImage={post.cover?.url || `${SITE_URL}/og_image/igna-social.webp`}
       />

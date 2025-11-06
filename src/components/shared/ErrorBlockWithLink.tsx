@@ -14,7 +14,6 @@ const ErrorBlockWithLink = ({ link = '/', linkText, status, error }: Props) => {
   const handleClick = () => {
     navigate({ to: link })
     window.scrollTo(0, 0)
-    console.log('clicked')
   }
   return (
     <div className='min-h-[calc(100vh-200px)] flex items-center justify-center'>

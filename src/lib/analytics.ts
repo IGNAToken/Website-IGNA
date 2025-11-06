@@ -31,14 +31,10 @@ interface ConsentState {
 export const initGA = () => {
   // Google Analytics is now initialized automatically in initConsentMode()
   // This function is kept for backward compatibility
-  console.log('Google Analytics is already initialized via consent mode')
 }
 
 // Initialize Consent Mode V2 early in page load process
 export const initConsentMode = () => {
-  console.log('Initializing Consent Mode V2...')
-  console.log('GA_MEASUREMENT_ID:', GA_MEASUREMENT_ID)
-
   // Initialize dataLayer early if not already done
   window.dataLayer = window.dataLayer || []
   window.gtag = function (...args: unknown[]) {
@@ -58,7 +54,6 @@ export const initConsentMode = () => {
 
   // Load Google Analytics script first (with denied consent)
   if (GA_MEASUREMENT_ID) {
-    console.log('Loading Google Analytics script...')
     const script = document.createElement('script')
     script.async = true
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
@@ -66,7 +61,6 @@ export const initConsentMode = () => {
 
     // Configure Google Analytics
     window.gtag('config', GA_MEASUREMENT_ID)
-    console.log('Google Analytics configured with consent mode')
   } else {
     console.warn(
       'GA_MEASUREMENT_ID not found! Set VITE_GA_MEASUREMENT_ID environment variable.'
@@ -75,7 +69,6 @@ export const initConsentMode = () => {
 
   // Check for existing consent and update if needed
   const consent = localStorage.getItem('cookie-consent')
-  console.log('Existing consent:', consent)
   if (consent === 'accepted') {
     updateConsentState(true)
   }
@@ -95,7 +88,6 @@ export const updateConsentState = (accepted: boolean) => {
     ad_personalization: accepted ? 'granted' : 'denied',
   }
 
-  console.log('Updating consent state:', consentState)
   window.gtag('consent', 'update', consentState)
 }
 

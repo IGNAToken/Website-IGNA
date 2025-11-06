@@ -45,7 +45,6 @@ const Contact = () => {
       const response = await api.post<{ status: number }>('/api/contact-forms', {
         data: { ...data, captchaToken },
       })
-      console.log('response', response)
       if (response) {
         reset()
         setFormStatus('Message sent successfully!')

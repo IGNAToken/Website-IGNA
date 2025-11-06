@@ -24,17 +24,23 @@ function RouteComponent() {
   if (error) return <div>Error: {error.message}</div>
   // TODO: 404 page
   if (!data?.data.length)
-    return <ErrorBlockWithLink link='/' linkText='Back to home' status={404} error={error || 'Page not found'} />
+    return (
+      <ErrorBlockWithLink
+        link='/'
+        linkText='Back to home'
+        status={404}
+        error={error || 'Page not found'}
+      />
+    )
 
   const post = data.data[0]
   const latestNewsData = latestNews?.pages.flatMap((page) => page.data) || []
 
-  console.log('post', post)
   return (
     <>
       <SEO
-        title={post.title || 'IGNA Tokenomics'}
-        description={post.abstract || 'Learn about IGNA Token economics and distribution'}
+        title={post.meta_title || post.title}
+        description={post.meta_description || post.abstract}
         canonicalUrl={`${SITE_URL}/igna-tokenomics`}
         ogImage={post.cover?.url || `${SITE_URL}/og_image/igna-social.webp`}
       />
