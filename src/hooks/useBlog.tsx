@@ -33,7 +33,7 @@ const fetchBlogs = async ({
       'pagination[pageSize]': pageSize,
       'pagination[page]': pageParam,
       filters,
-      sort: 'publishedAt:desc',
+      sort: 'date:desc',
     },
   })
 }
@@ -41,7 +41,8 @@ const fetchBlogs = async ({
 const useBlogs = (filters: BlogFilter = {}, pageSize: number = 10) => {
   return useInfiniteQuery({
     queryKey: ['blogs', filters],
-    queryFn: ({ pageParam = 1 }) => fetchBlogs({ pageParam, filters, pageSize }),
+    queryFn: ({ pageParam = 1 }) =>
+      fetchBlogs({ pageParam, filters, pageSize }),
     getNextPageParam: (lastPage) => {
       const { page, pageCount } = lastPage.meta.pagination
       if (page < pageCount) return page + 1
