@@ -14,6 +14,8 @@ export type Blog = {
   cover: Media
   blog_faqs: BlogFAQ[]
   meta_tags: string
+  meta_description: string
+  meta_title: string
 }
 
 export type BlogFAQ = {

@@ -42,11 +42,6 @@ export default function SEO({ title, description, canonicalUrl, ogImage, keyword
       updateMetaTag('property', 'twitter:description', description)
     }
 
-    // Update keywords
-    if (keywords) {
-      updateMetaTag('name', 'keywords', keywords)
-    }
-
     // Update OG image
     if (ogImage) {
       updateMetaTag('property', 'og:image', ogImage)

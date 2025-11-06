@@ -27,7 +27,14 @@ function RouteComponent() {
   // TODO: 404 page
   const post = data?.data?.[0]
   if (!post)
-    return <ErrorBlockWithLink link='/blog' linkText='Back to blog' status={404} error={error || 'Page not found'} />
+    return (
+      <ErrorBlockWithLink
+        link='/blog'
+        linkText='Back to blog'
+        status={404}
+        error={error || 'Page not found'}
+      />
+    )
 
   const latestNewsData = latestNews?.pages.flatMap((page) => page.data) || []
 
@@ -37,11 +44,10 @@ function RouteComponent() {
   return (
     <>
       <SEO
-        title={post.title}
-        description={post.abstract}
+        title={post.meta_title || post.title}
+        description={post.meta_description || post.abstract}
         canonicalUrl={canonicalUrl}
         ogImage={post.cover?.url || `${SITE_URL}/og_image/igna-social.webp`}
-        keywords={post.meta_tags}
       />
       <BlogPostDisplay
         post={post}
