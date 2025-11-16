@@ -1,0 +1,22 @@
+{
+  "landing": {
+    "hero": {
+      "subtitle": "A SZENNYEZÉST MEGOLDÁSSÁ ALKALMAZZUK",
+      "title": {
+        "row1": "Alakítsd át",
+        "row2": "Hulladékot",
+        "row3": "vagyonná",
+        "row4": "Vagyon"
+      },
+      "description": "Csatlakozz a forradalmi mozgalomhoz, amely műanyag hulladékot jövedelmező befektetéssé alakít át úttörő kriptovalutánk segítségével.",
+      "buttons": {
+        "learnMore": "További információ",
+        "joinDiscord": "Csatlakozz a Discordhoz"
+      }
+    },
+    "motto": {
+      "badge": "Projekt alapvető információk",
+      "text": "A <span>$IGNA</span>-ba történő befektetéssel nem csak kriptót vásárolsz — hozzájárulsz a pirolízis üzemek létrehozásához, amelyek hulladék műanyagot olajjá alakítanak, csökkentve ezzel a globális szennyezést. Befektetésed támogatja ezen technológia világszerte történő elterjedését, elősegítve a tisztább környezetet. Csatlakozz hozzánk kriptónk vásárlásával, és tegyél ma pozitív hatást!"
+    }
+  }
+}
