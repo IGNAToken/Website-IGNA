@@ -1,7 +1,50 @@
-import DOMPurify from 'dompurify'
+import DOMPurify, { type Config } from 'dompurify'
+
+const YOUTUBE_IFRAME_SRC =
+  /^https:\/\/(?:www\.|m\.)?(youtube\.com\/embed\/|youtube-nocookie\.com\/embed\/|youtu\.be\/)/i
+
+let iframeHookRegistered = false
+
+if (!iframeHookRegistered) {
+  DOMPurify.addHook('uponSanitizeElement', (node, data) => {
+    if (data.tagName !== 'iframe') {
+      return
+    }
+
+    const iframe = node as Element
+    const src = iframe.getAttribute('src') ?? ''
+
+    if (!YOUTUBE_IFRAME_SRC.test(src)) {
+      node.parentNode?.removeChild(node)
+      return
+    }
+
+    iframe.setAttribute(
+      'allow',
+      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+    )
+    iframe.setAttribute('allowfullscreen', 'true')
+    iframe.setAttribute('frameborder', '0')
+  })
+
+  iframeHookRegistered = true
+}
+
+const sanitizerConfig: Config = {
+  ADD_TAGS: ['iframe'],
+  ADD_ATTR: [
+    'allow',
+    'allowfullscreen',
+    'frameborder',
+    'height',
+    'width',
+    'src',
+    'title',
+  ],
+}
 
 const ContentSanitizer = ({ content }: { content: string }) => {
-  const sanitizedContent = DOMPurify.sanitize(content)
+  const sanitizedContent = DOMPurify.sanitize(content, sanitizerConfig)
 
   return (
     <div
