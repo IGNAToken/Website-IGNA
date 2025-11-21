@@ -22,7 +22,7 @@ const Socials = () => {
   )
 }
 
-const SocialContent = ({ socials }: { socials: Social[] }) => {
+export const SocialContent = ({ socials }: { socials: Social[] }) => {
   return (
     <div className='flex flex-wrap gap-4 max-w-2xl justify-center'>
       {socials.map((social) => (

@@ -13,9 +13,11 @@ import { Route as SwapRouteImport } from './routes/swap'
 import { Route as IgnaTokenomicsRouteImport } from './routes/igna-tokenomics'
 import { Route as HowToBuyIgnaRouteImport } from './routes/how-to-buy-igna'
 import { Route as DocsRouteImport } from './routes/docs'
+import { Route as LangRouteImport } from './routes/$lang'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as LangLandingRouteImport } from './routes/$lang/landing'
 
 const SwapRoute = SwapRouteImport.update({
   id: '/swap',
@@ -37,6 +39,11 @@ const DocsRoute = DocsRouteImport.update({
   path: '/docs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangRoute = LangRouteImport.update({
+  id: '/$lang',
+  path: '/$lang',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -52,32 +59,43 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangLandingRoute = LangLandingRouteImport.update({
+  id: '/landing',
+  path: '/landing',
+  getParentRoute: () => LangRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/docs': typeof DocsRoute
   '/how-to-buy-igna': typeof HowToBuyIgnaRoute
   '/igna-tokenomics': typeof IgnaTokenomicsRoute
   '/swap': typeof SwapRoute
+  '/$lang/landing': typeof LangLandingRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/docs': typeof DocsRoute
   '/how-to-buy-igna': typeof HowToBuyIgnaRoute
   '/igna-tokenomics': typeof IgnaTokenomicsRoute
   '/swap': typeof SwapRoute
+  '/$lang/landing': typeof LangLandingRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$lang': typeof LangRouteWithChildren
   '/docs': typeof DocsRoute
   '/how-to-buy-igna': typeof HowToBuyIgnaRoute
   '/igna-tokenomics': typeof IgnaTokenomicsRoute
   '/swap': typeof SwapRoute
+  '/$lang/landing': typeof LangLandingRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -85,34 +103,41 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$lang'
     | '/docs'
     | '/how-to-buy-igna'
     | '/igna-tokenomics'
     | '/swap'
+    | '/$lang/landing'
     | '/blog/$slug'
     | '/blog'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$lang'
     | '/docs'
     | '/how-to-buy-igna'
     | '/igna-tokenomics'
     | '/swap'
+    | '/$lang/landing'
     | '/blog/$slug'
     | '/blog'
   id:
     | '__root__'
     | '/'
+    | '/$lang'
     | '/docs'
     | '/how-to-buy-igna'
     | '/igna-tokenomics'
     | '/swap'
+    | '/$lang/landing'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LangRoute: typeof LangRouteWithChildren
   DocsRoute: typeof DocsRoute
   HowToBuyIgnaRoute: typeof HowToBuyIgnaRoute
   IgnaTokenomicsRoute: typeof IgnaTokenomicsRoute
@@ -151,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang': {
+      id: '/$lang'
+      path: '/$lang'
+      fullPath: '/$lang'
+      preLoaderRoute: typeof LangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -172,11 +204,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang/landing': {
+      id: '/$lang/landing'
+      path: '/landing'
+      fullPath: '/$lang/landing'
+      preLoaderRoute: typeof LangLandingRouteImport
+      parentRoute: typeof LangRoute
+    }
   }
 }
 
+interface LangRouteChildren {
+  LangLandingRoute: typeof LangLandingRoute
+}
+
+const LangRouteChildren: LangRouteChildren = {
+  LangLandingRoute: LangLandingRoute,
+}
+
+const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LangRoute: LangRouteWithChildren,
   DocsRoute: DocsRoute,
   HowToBuyIgnaRoute: HowToBuyIgnaRoute,
   IgnaTokenomicsRoute: IgnaTokenomicsRoute,

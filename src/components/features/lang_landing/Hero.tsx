@@ -19,29 +19,17 @@ const HeroTranslated = () => {
 
       {/* Content Overlay */}
       <div className='hero-content-overlay'>
-        <div className='hero-content-container'>
+        <div className='flex flex-col items-center justify-center max-w-5xl mx-auto no-wrap'>
           <h2 className='hero-subtitle'>{t('landing.hero.subtitle')}</h2>
-          <h1 className='hero-main-title'>
-            <div className='hero-title-row'>
+          <h1 className='flex text-6xl font-bold flex-col gap-4 items-center justify-center'>
+            <span className='hero-gradient-text text-8xl'>
               {t('landing.hero.title.row1')}
-              <span className='hero-gradient-text'>{t('landing.hero.title.row2')}</span>
-            </div>
-            <div className='hero-title-row'>
-              {t('landing.hero.title.row3')}
-              <span className='hero-gradient-text'>{t('landing.hero.title.row4')}</span>
-            </div>
+            </span>
+            <span className='hero-title-row font-semibold'>
+              {t('landing.hero.title.row2')}
+            </span>
           </h1>
-          <h3 className='hero-description'>
-            {t('landing.hero.description')}
-          </h3>
-          <div className='hero-buttons-container'>
-            <Button
-              variant='outline'
-              className='bg-background hero-button hero-button-outline'
-              asChild
-            >
-              <a href='#strategy'>{t('landing.hero.buttons.learnMore')}</a>
-            </Button>
+          <div className='hero-buttons-container mt-10'>
             <Button
               className='font-bold hero-button hero-button-default'
               asChild
@@ -58,4 +46,3 @@ const HeroTranslated = () => {
 }
 
 export default HeroTranslated
-

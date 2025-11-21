@@ -1,6 +1,6 @@
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
 import { useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import i18n from '@/i18n/config'
 
 export const Route = createFileRoute('/$lang')({
   component: LangLayout,
@@ -19,14 +19,13 @@ export const Route = createFileRoute('/$lang')({
 
 function LangLayout() {
   const { lang } = Route.useParams()
-  const { i18n } = useTranslation()
 
   useEffect(() => {
     // Change language when route parameter changes
     if (lang && ['en', 'hu', 'sk'].includes(lang)) {
       i18n.changeLanguage(lang)
     }
-  }, [lang, i18n])
+  }, [lang])
 
   return <Outlet />
 }
