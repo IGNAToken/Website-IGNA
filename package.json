@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@netlify/vite-plugin-tanstack-start": "^1.2.1",
     "@tanstack/router-plugin": "^1.124.0",
     "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
