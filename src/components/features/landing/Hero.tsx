@@ -1,3 +1,4 @@
+import AnimatedBubbles from '@/components/shared/AnimatedBubbles'
 import { Button } from '@/components/ui/button'
 import { DISCORD_URL } from '@/config'
 
@@ -15,7 +16,8 @@ const Hero = () => {
       />
 
       {/* Content Overlay */}
-      <div className='hero-content-overlay'>
+      <div className='hero-content-overlay relative'>
+        <AnimatedBubbles minSize={15} maxSize={50} count={20} />
         <div className='hero-content-container'>
           <h2 className='hero-subtitle'>TURN POLLUTION INTO SOLUTION</h2>
           <h1 className='hero-main-title'>
@@ -29,22 +31,14 @@ const Hero = () => {
             </div>
           </h1>
           <h3 className='hero-description'>
-            Join the revolutionary movement to turn plastic waste into a
-            profitable investment with the help of our pioneering
-            cryptocurrency.
+            Join the revolutionary movement to turn plastic waste into a profitable investment with the help of our
+            pioneering cryptocurrency.
           </h3>
           <div className='hero-buttons-container'>
-            <Button
-              variant='outline'
-              className='bg-background hero-button hero-button-outline'
-              asChild
-            >
+            <Button variant='outline' className='bg-background hero-button hero-button-outline' asChild>
               <a href='#strategy'>Learn More</a>
             </Button>
-            <Button
-              className='font-bold hero-button hero-button-default'
-              asChild
-            >
+            <Button className='font-bold hero-button hero-button-default' asChild>
               <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>
                 Join Discord
               </a>
