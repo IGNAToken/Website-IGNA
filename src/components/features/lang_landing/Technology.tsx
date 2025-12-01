@@ -13,24 +13,23 @@ const Technology = () => {
           <div className='text-4xl font-bold text-white'>{t('landing.pyrolisysTechnology.title')}</div>
         </div>
       </div>
-      <div className='flex flex-col gap-4 md:max-w-5xl mx-auto'>
-        <div></div>
-        <div className='flex flex-col md:flex-row gap-8 items-start px-4'>
-          <div className='flex-1'>
-            <div className='text-xl font-bold mb-4'>{t('landing.pyrolisysTechnology.stepsBlock.title')}</div>
-            <ol>
+      <div className='flex flex-col gap-4 md:max-w-5xl w-full mx-auto'>
+        <div className='flex flex-col md:flex-row gap-8 items-start px-4 '>
+          <div className='flex-1 flex flex-col justify-center my-auto'>
+            <div className='text-3xl font-bold mb-4'>{t('landing.pyrolisysTechnology.stepsBlock.title')}</div>
+            <ol className='number-increment-list'>
               {steps.map((step) => (
-                <li className='text-lg number-increment' key={step}>
+                <li className='text-lg number-increment ' key={step}>
                   {step}
                 </li>
               ))}
             </ol>
           </div>
-          <div className='flex-1 grid grid-cols-2 gap-4 md:max-h-[200px]'>
+          <div className='flex-1 grid grid-cols-2 gap-4 md:max-h-[400px]'>
             <img
               src='/images/pyrolisis-machine.avif'
               alt='Placeholder 1'
-              className='w-full h-full object-cover rounded-lg col-span-2 md:max-h-[100px]'
+              className='w-full h-full object-cover rounded-lg col-span-2 md:max-h-[250px]'
             />
             <img
               src='/images/pyrolisis-machine.avif'
