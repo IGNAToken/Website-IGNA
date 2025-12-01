@@ -19,21 +19,16 @@ const HeroTranslated = () => {
 
       {/* Content Overlay */}
       <div className='hero-content-overlay'>
-        <div className='flex flex-col items-center justify-center max-w-5xl mx-auto no-wrap'>
+        <div className='hero-content-container'>
           <h2 className='hero-subtitle'>{t('landing.hero.subtitle')}</h2>
-          <h1 className='flex text-6xl font-bold flex-col gap-4 items-center justify-center'>
-            <span className='hero-gradient-text text-8xl'>
-              {t('landing.hero.title.row1')}
-            </span>
-            <span className='hero-title-row font-semibold'>
+          <h1 className='hero-main-title'>
+            <div className='hero-title-row text-2xl md:text-6xl'>
+              <span className='hero-gradient-text text-4xl md:text-8xl'>{t('landing.hero.title.row1')}</span>
               {t('landing.hero.title.row2')}
-            </span>
+            </div>
           </h1>
           <div className='hero-buttons-container mt-10'>
-            <Button
-              className='font-bold hero-button hero-button-default'
-              asChild
-            >
+            <Button className='font-bold hero-button hero-button-default' asChild>
               <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>
                 {t('landing.hero.buttons.joinDiscord')}
               </a>

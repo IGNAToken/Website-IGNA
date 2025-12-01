@@ -23,7 +23,7 @@ const WayToJoin = () => {
       <Badge>{t('landing.wayToJoin.subTitle')}</Badge>
       <SectionTitle title={t('landing.wayToJoin.title')} subtitle='' />
 
-      <div className='flex gap-4 max-w-5xl mx-auto'>
+      <div className='flex gap-4 flex-col md:flex-row max-w-5xl mx-auto'>
         {blocks.map((block, index) => {
           const IconComponent = icons[index % icons.length]
           return (

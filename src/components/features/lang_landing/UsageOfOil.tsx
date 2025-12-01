@@ -19,10 +19,8 @@ const UsageOfOil = () => {
       />
       <Button>{t('landing.usageOfTheOil.buttonText')}</Button>
       <div className='flex flex-col gap-4 max-w-5xl mx-auto'>
-        <h3 className='text-4xl font-bold flex justify-center mb-10'>
-          {t('landing.experiences.title')}
-        </h3>
-        <div className='flex gap-4'>
+        <h3 className='text-4xl font-bold flex justify-center mb-10'>{t('landing.experiences.title')}</h3>
+        <div className='flex gap-4 flex-col md:flex-row'>
           {(
             t('landing.experiences.blocks', { returnObjects: true }) as Array<{
               title: string
