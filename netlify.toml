@@ -1,3 +1,10 @@
 [build]
   command = "vite build"
-  publish = "dist/client"
+  publish = "dist"
+
+# Handle client-side routing for SPA
+# All routes should serve index.html so TanStack Router can handle routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
