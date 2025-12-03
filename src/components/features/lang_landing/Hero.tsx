@@ -60,7 +60,6 @@ const HeroTranslated = () => {
             <h2 className='text-sm md:text-base lg:text-lg font-semibold tracking-[0.2em] uppercase text-primary/90 animate-[fadeInDown_1s_ease-out]'>
               {t('landing.hero.subtitle')}
             </h2>
-
             {/* Main Title with gradient and animation */}
             <h1 className='space-y-2 md:space-y-4'>
               <div className='flex flex-col items-center justify-center gap-2 md:gap-4'>
@@ -72,14 +71,12 @@ const HeroTranslated = () => {
                 </span>
               </div>
             </h1>
-
-            {/* Description if available */}
+            {/* Description if available
             {t('landing.hero.description') && (
               <p className='text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto animate-[fadeInUp_1s_ease-out_0.6s_both] leading-relaxed'>
                 {t('landing.hero.description')}
               </p>
-            )}
-
+            )} */}
             {/* CTA Buttons */}
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-12 animate-[fadeInUp_1s_ease-out_0.8s_both]'>
               <Button
