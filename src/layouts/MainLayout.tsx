@@ -39,18 +39,36 @@ const MainLayout = ({ children }: Props) => {
     }
   }, [children, location.pathname])
 
-  // Handle hash navigation
+  // Handle hash navigation with support for lazy-loaded content
   useEffect(() => {
+    const scrollToHash = (hash: string) => {
+      const element = document.querySelector(hash)
+      if (element) {
+        // Account for header height
+        const headerHeight = 80
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth',
+        })
+        return true
+      }
+      return false
+    }
+
     const handleHashNavigation = () => {
       const hash = window.location.hash
       if (hash) {
-        // Wait for content to be rendered
-        setTimeout(() => {
-          const element = document.querySelector(hash)
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        }, 100)
+        // Try immediately
+        if (scrollToHash(hash)) return
+
+        // Retry with increasing delays to wait for lazy-loaded components
+        const retries = [100, 300, 500, 1000, 2000]
+        retries.forEach((delay) => {
+          setTimeout(() => {
+            scrollToHash(hash)
+          }, delay)
+        })
       }
     }
 

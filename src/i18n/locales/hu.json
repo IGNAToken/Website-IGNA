@@ -1,5 +1,10 @@
 {
   "landing": {
+    "ctaBlock": {
+      "call": "Hívjon minket",
+      "contact": "Vegye fel velünk a kapcsolatot",
+      "join": "Csatlakozzon a közösségünkhöz"
+    },
     "hero": {
       "subtitle": "Az IGNA egy",
       "title": {

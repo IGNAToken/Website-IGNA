@@ -1,7 +1,7 @@
 import Badge from '@/components/shared/Badge'
 import SectionTitle from '@/components/shared/SectionTitle'
-import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
+import CtaBlock from './CtaBlock'
 
 const PartOfTheChange = () => {
   const { t } = useTranslation()
@@ -25,7 +25,7 @@ const PartOfTheChange = () => {
             {t('landing.pyrolisis.title')}
           </div>
           <div className='text-lg'>{t('landing.pyrolisis.subTitlte')}</div>
-          <Button>{t('landing.pyrolisis.button')}</Button>
+          <CtaBlock size='sm' />
         </div>
       </div>
     </section>

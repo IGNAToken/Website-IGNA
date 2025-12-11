@@ -1,8 +1,7 @@
-import { Button } from '@/components/ui/button'
-import { DISCORD_URL } from '@/config'
 import { useTranslation } from 'react-i18next'
 import { useRef } from 'react'
 import AnimatedBubbles from '@/components/shared/AnimatedBubbles'
+import CtaBlock from './CtaBlock'
 
 const HeroTranslated = () => {
   const { t } = useTranslation()
@@ -79,15 +78,7 @@ const HeroTranslated = () => {
             )} */}
             {/* CTA Buttons */}
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-12 animate-[fadeInUp_1s_ease-out_0.8s_both]'>
-              <Button
-                size='lg'
-                className='font-bold text-base md:text-lg px-8 py-6 bg-primary text-black hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60'
-                asChild
-              >
-                <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>
-                  {t('landing.hero.buttons.joinDiscord')}
-                </a>
-              </Button>
+              <CtaBlock />
             </div>
           </div>
         </div>
