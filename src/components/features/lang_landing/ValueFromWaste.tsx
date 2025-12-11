@@ -7,6 +7,11 @@ const ValueFromWaste = () => {
       <div className='text-xl font-light uppercase text-center text-primary max-w-xl'>
         {t('landing.valueFromWaste.subText')}
       </div>
+      <img
+        src='\images\lang_landing\pyrolysis_without_bg.png'
+        alt='Pyrolysis Machine'
+        className='w-full h-full object-contain max-w-2xl mx-auto'
+      />
       <div className='text-3xl font-bold text-center text-white/75 max-w-3/4'>
         {t('landing.valueFromWaste.mainText')}
       </div>
