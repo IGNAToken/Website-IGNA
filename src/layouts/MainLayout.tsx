@@ -12,7 +12,9 @@ type Props = {
 const MainLayout = ({ children }: Props) => {
   const location = useLocation()
   const [curtainActive, setCurtainActive] = useState(false)
-  const [curtainPhase, setCurtainPhase] = useState<'idle' | 'covering' | 'revealing'>('idle')
+  const [curtainPhase, setCurtainPhase] = useState<
+    'idle' | 'covering' | 'revealing'
+  >('idle')
   const [displayedChildren, setDisplayedChildren] = useState(children)
   const prevPathRef = useRef(location.pathname)
 
@@ -46,7 +48,10 @@ const MainLayout = ({ children }: Props) => {
       if (element) {
         // Account for header height
         const headerHeight = 80
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight
+        const elementPosition =
+          element.getBoundingClientRect().top +
+          window.pageYOffset -
+          headerHeight
         window.scrollTo({
           top: elementPosition,
           behavior: 'smooth',
@@ -84,7 +89,9 @@ const MainLayout = ({ children }: Props) => {
   }, [])
 
   return (
-    <div className={`bg-background text-white flex flex-col min-h-screen justify-between relative`}>
+    <div
+      className={`bg-background text-white flex flex-col min-h-screen justify-between relative`}
+    >
       {/* Curtain overlay */}
       <div className={`flex-grow flex flex-col`}>
         <NavBar />
@@ -93,7 +100,12 @@ const MainLayout = ({ children }: Props) => {
             <div
               className={`absolute left-0 top-0 w-full z-50 bg-background transition-all duration-500`}
               style={{
-                height: curtainPhase === 'covering' ? '100%' : curtainPhase === 'revealing' ? '0vh' : '0vh',
+                height:
+                  curtainPhase === 'covering'
+                    ? '100%'
+                    : curtainPhase === 'revealing'
+                      ? '0vh'
+                      : '0vh',
                 pointerEvents: 'none',
               }}
             />
