@@ -19,7 +19,7 @@ const CtaBlock = ({ size = 'lg' }: { size?: 'lg' | 'sm' }) => {
 
   return (
     <div
-      className={`flex items-center justify-center ${size === 'sm' ? 'gap-2' : 'gap-4'}`}
+      className={`flex flex-col md:flex-row items-center justify-center ${size === 'sm' ? 'gap-2' : 'gap-4'}`}
     >
       <a href={`tel:${phoneNumber}`}>
         <Button size={size} className={size === 'lg' ? 'font-bold' : ''}>
