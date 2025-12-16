@@ -130,17 +130,20 @@
         {
           "title": "Token vásárlás",
           "description": "(IGNA coin) → hosszú távú érték",
-          "buttonText": "Érdekel"
+          "buttonText": "Érdekel",
+          "url": "/swap"
         },
         {
           "title": "Támogatói csomagok",
           "description": "Magasabb értékű befektetési igényeket elégít ki",
-          "buttonText": "Támogatom"
+          "buttonText": "Támogatom",
+          "url": "https://slavkask.com/"
         },
         {
           "title": "Szervezetek",
           "description": "Környezetvédelmi vagy egyéb más témában",
-          "buttonText": "Ezt választom"
+          "buttonText": "Ezt választom",
+          "url": "https://slavkask.com/"
         }
       ]
     },

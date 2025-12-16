@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { ShoppingCart, Gift, Building2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from '@tanstack/react-router'
+import { handleNavigation } from '@/lib/urlHelpers'
 
 const WayToJoin = () => {
   const { t } = useTranslation()
@@ -16,6 +17,7 @@ const WayToJoin = () => {
     title: string
     description: string
     buttonText: string
+    url: string
   }>
 
   return (
@@ -37,7 +39,7 @@ const WayToJoin = () => {
                   variant='outline'
                   className='w-full'
                   onClick={() => {
-                    navigate({ to: '/swap' })
+                    handleNavigation(block.url, navigate)
                   }}
                 >
                   {block.buttonText}
