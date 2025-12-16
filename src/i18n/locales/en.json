@@ -1,15 +1,15 @@
 {
   "landing": {
     "ctaBlock": {
-      "call": "Hívjon minket",
-      "contact": "Vegye fel velünk a kapcsolatot",
-      "join": "Csatlakozzon a közösségünkhöz"
+      "call": "Call us",
+      "contact": "Contact us",
+      "join": "Join the community"
     },
     "hero": {
-      "subtitle": "Az IGNA egy",
+      "subtitle": "The IGNA is a",
       "title": {
-        "row1": "Valós projektre",
-        "row2": "épülő környezetvédelmi befektetés"
+        "row1": "Real project",
+        "row2": "based environmental investment"
       },
       "buttons": {
         "learnMore": "További információ",
@@ -17,142 +17,140 @@
       }
     },
     "vision": {
-      "badge": "Mi a célunk?",
-      "title": "Víziónk",
-      "subtitle": "Az IGNA egy nonprofit szervezet által indított, környezetvédelmi és technológiai kezdeményezés. A célunk egyszerű",
+      "badge": "What is our goal?",
+      "title": "Our vision",
+      "subtitle": "IGNA is an environmental and technological initiative launched by a non-profit organization. Our goal is simple.",
       "blocks": [
         {
-          "title": "Környezetvédelem",
-          "description": "Világszinten egyre égetőbb probléma a műanyaghulladék kezelése, amely évszázadokig terheli a természetet. Az IGNA által használt pirolízis technológia lehetővé teszi, hogy a nem újrahasznosítható műanyagból is energiát és olajat nyerjünk. Így egyszerre oldunk meg környezeti válságot és építünk fenntartható gazdasági modellt."
+          "title": "Environmental Protection",
+          "description": "The management of plastic waste has become an increasingly urgent global issue, as it burdens nature for centuries. The pyrolysis technology used by IGNA makes it possible to extract energy and oil even from non-recyclable plastics. In this way, we address an environmental crisis while building a sustainable economic model."
         },
         {
-          "title": "Virágzó Befektetés",
-          "description": "Az IGNA nem rövid távú ígéret, hanem hosszú távú értékteremtés. A műanyaghulladékból előállított olaj bevétele folyamatosan új üzemek építését finanszírozza, így minden befektetés újabb növekedést indít el. Ez egy önfenntartó kör, amely biztos alapot teremt a token értékének stabilitásához és gyarapodásához."
+          "title": "A Thriving Opportunity",
+          "description": "IGNA is not a short-term promise but a long-term creation of value. The revenue from oil produced from plastic waste continuously finances the construction of new plants, meaning each contribution fuels further growth. It is a self-sustaining cycle that provides a solid foundation for the stability and growth of the token’s value."
         },
         {
-          "title": "Értékadó közösség",
-          "description": "Az IGNA nem csupán egy projekt, hanem egy összetartó közösség, amelynek minden tagja aktívan hozzájárul egy tisztább jövőhöz. Befektetőként nem csak pénzügyi hozamot kap, hanem részese lesz egy globális mozgalomnak, amely kézzelfogható hatást gyakorol a világra. Ez a közösség értéket ad tagjainak, miközben valódi változást hoz a társadalomban."
+          "title": "A Value-Driven Community",
+          "description": "IGNA is not just a project, but a united community in which every member actively contributes to a cleaner future. As a participant, you don’t just gain potential financial returns — you become part of a global movement that creates tangible impact on the world. This community brings value to its members while driving real change in society."
         }
       ]
     },
     "valueFromWaste": {
-      "subText": "A műanyaghulladék többé nem szemét – hanem érték.",
-      "mainText": "Az IGNA olyan környezetvédelmi projekt, amely a hulladékból tiszta energiát és hosszú távú befektetési lehetőséget teremt."
+      "subText": "Plastic waste is no longer garbage — it’s value.",
+      "mainText": "IGNA is an environmental project that turns waste into clean energy and builds a sustainable source of lasting value."
     },
     "goal": {
-      "subText": "Amit megvalósítunk",
-      "heading": "Célunk",
-      "subTitle": "A műanyag hulladékból modern pirolízis technológiával olajat állítunk elő. IGNA token biztosítja: a partnereink a hulladékeltávolítás díjának egy részét tokenben fizetik, ami folyamatos keresletet és gazdasági stabilitást teremt. Így a befektetés egyszerre szolgálja a környezetvédelmi célt és a hosszú távú értéknövekedést.",
-      "highlightedText": "A bevételből új üzemek építésébe forgatunk vissza."
+      "subText": "What We Build",
+      "heading": "Our Goals",
+      "subTitle": "We produce oil from plastic waste using modern pyrolysis technology. The IGNA project ensures that our partners pay part of their waste removal fees in tokens, creating continuous demand and economic stability. This approach supports both environmental impact and sustainable value growth.",
+      "highlightedText": "We reinvest the revenue into building new plants."
     },
     "partOfTheChange": {
-      "subText": "Légy részese a változásnak",
-      "title": "„A világ műanyag válságban van”",
-      "description": "Egy PET-palack 450 év alatt bomlik le. Évente több mint 8 millió tonna műanyag kerül az óceánba. A hagyományos újrahasznosítás nem tud mindent feldolgozni."
+      "subText": "Be Part of the Change",
+      "title": "„The world is facing a plastic crisis.”",
+      "description": "A single PET bottle takes 450 years to decompose. Every year, more than 8 million tons of plastic end up in the ocean. Traditional recycling methods cannot process it all."
     },
     "pyrolisis": {
-      "title": "A Pirolízis gép megoldást nyújt",
-      "subTitlte": "„Az IGNA pirolízis üzemekkel a műanyagot hulladékot újrahasznosítjuk. Az így nyert olajból bevétel keletkezik, amelyből új üzemeket építünk. Ez egy önfenntartó, körforgásos modell.”",
-      "button": "Érdekel a lehetőség"
+      "title": "The Pyrolysis Machine Provides the Solution",
+      "subTitlte": "„With IGNA’s pyrolysis plants, we recycle plastic waste. The oil produced generates revenue, which is reinvested into building new facilities. This creates a self-sustaining, circular model.”",
+      "button": "I'm interested"
     },
     "investment": {
-      "badge": "Befektetés",
-      "subTitle": "Időben csatlakozni a legjobb döntés",
-      "title": "Miért jó befektetés az IGNA?",
+      "badge": "Investment",
+      "subTitle": "Joining Early Is the Best Decision",
+      "title": "Why Is IGNA a Smart Choice?",
       "blocks": [
         {
-          "title": "Biztonság",
-          "description": "A projekt mögött 40 év tapasztalat áll a környezetvédelem és hulladékfeldolgozás területén."
+          "title": "Security",
+          "description": "The project is backed by 40 years of experience in environmental protection and waste management."
         },
         {
-          "title": "Átláthatóság",
-          "description": "Az IGNA működésének alapja a bizalom és az ellenőrizhetőség. A bevételek és tokenmozgások külön poolokban kerülnek nyilvántartásra, így világosan látható, hogyan forgatjuk vissza a forrásokat az üzemek építésébe és a kereskedelem ösztönzésébe. A partnereink által tokenben fizetett hulladékkezelési díjak szintén nyomon követhetők, ami folyamatos keresletet biztosít az IGNA számára. Ez a rendszer stabilitást teremt, miközben Ön mindig tiszta képet kap arról, hogyan hasznosul a befektetése."
+          "title": "Transparency",
+          "description": "The foundation of IGNA’s operation is trust and accountability. Revenues and token movements are recorded in separate pools, making it clear how resources are reinvested into building new plants and stimulating trade. The waste management fees paid by our partners in tokens are also fully traceable, ensuring continuous demand for IGNA. This system creates stability while ensuring full transparency in how every contribution supports real-world impact."
         },
         {
-          "title": "Növekedési potenciál",
-          "description": "Az olajbevétel folyamatosan új üzemek építését finanszírozza – minél több üzem, annál nagyobb bevétel."
+          "title": "Growth potential",
+          "description": "The oil revenue continuously finances the construction of new plants – the more plants there are, the greater the revenue."
         }
       ]
     },
     "pyrolisysTechnology": {
-      "subTitle": "Ismerd meg!",
-      "title": "Hogyan működik a pirolízis technológia?",
+      "subTitle": "Get to Know It!",
+      "title": "Learn How Pyrolysis Technology Works",
       "stepsBlock": {
-        "title": "5 lépésben - nagy változás",
+        "title": "In five steps – a major transformation.",
         "steps": [
-          "Hulladék begyűjtése",
-          "Pirolízis üzem feldolgozza",
-          "Olaj, gáz és energia keletkezik",
-          "Bevétel új üzemekre fordítva",
-          "Befektetői hozam → közös környezeti hatás"
+          "Waste collection",
+          "Processed by the pyrolysis plant",
+          "Oil, gas, and energy are generated",
+          "Revenue reinvested into new plants",
+          "Investor returns → shared environmental impact"
         ]
       }
     },
     "usageOfTheOil": {
-      "title": "Mire használható az olaj?",
-      "subTitle": "Sokoldalú hasznosítás",
-      "buttonText": "Csatlakozom"
+      "title": "How Can the Oil Be Used?",
+      "subTitle": "Multiple Uses and Benefits",
+      "buttonText": "Join Us"
     },
     "experiences": {
-      "title": "Megbízhatóság és tapasztalat",
+      "title": "Reliability and Experience",
       "blocks": [
         {
-          "title": "Megbízható háttér",
-          "description": "Nonprofit szervezet (SlavkaSk n.o.) áll a projekt mögött."
+          "title": "Reliable Background",
+          "description": "The project is backed by a non-profit organization (SlavkaSk n.o.)."
         },
         {
-          "title": "Valós projekt",
-          "description": "A tokenekhez konkrét gazdasági tevékenység kapcsolódik."
+          "title": "Real project",
+          "description": "The tokens are linked to a concrete economic activity."
         },
         {
-          "title": "Növekedés",
-          "description": "A bevétel visszaforgatásra kerül, nem spekulációra."
+          "title": "Growth",
+          "description": "The revenue is reinvested, not used for speculation."
         },
         {
-          "title": "A kereslet növekszik",
-          "description": "Token égési mechanizmus → csökkenő kínálat, növekvő érték."
+          "title": "Demand is growing",
+          "description": "Token burn mechanism → decreasing supply, increasing value."
         }
       ],
       "buttons": {
-        "community": "Tovább a közösségre",
-        "invest": "Befektetek"
+        "community": "Go to the community",
+        "invest": "I want to invest"
       }
     },
     "roadmap": {
-      "subtitle": "Mérföldkövek és jövőkép",
+      "subtitle": "Milestones and Vision",
       "title": "Roadmap",
-      "highlightedText": "Elkötelezettek vagyunk céljaink iránt"
+      "highlightedText": "We are committed to our goals"
     },
     "wayToJoin": {
-      "title": "Csatlakozási és befektetési módok",
-      "subTitle": "Hogyan lehetsz részese az IGNA projektnek?",
+      "title": "Ways to Join and Contribute",
+      "subTitle": "How Can You Become Part of the IGNA Project?",
       "blocks": [
         {
-          "title": "Token vásárlás",
-          "description": "(IGNA coin) → hosszú távú érték",
-          "buttonText": "Érdekel",
+          "title": "Token Purchase",
+          "description": "(IGNA token) → long-term value",
+          "buttonText": "I'm interested",
           "url": "/swap"
         },
         {
-          "title": "Támogatói csomagok",
-          "description": "Magasabb értékű befektetési igényeket elégít ki",
-          "buttonText": "Támogatom",
+          "title": "Support Packages",
+          "description": "Meets higher-value investment demands.",
+          "buttonText": "I want to support",
           "url": "https://slavkask.com/"
         },
         {
-          "title": "Szervezetek",
-          "description": "Környezetvédelmi vagy egyéb más témában",
-          "buttonText": "Ezt választom",
-          "url": "https://slavkask.com/"
+          "title": "Organizations",
+          "description": "In environmental or other related fields."
         }
       ]
     },
     "joinTheCommunity": {
-      "title": "Csatlakozz közösségünkhöz"
+      "title": "Join our Community"
     },
     "followUs": {
-      "title": "Kövess minket Social media platformjainkon!",
-      "textForSocials": "Itt találkozhatsz velünk"
+      "title": "Follow Us on Social Media!",
+      "textForSocials": "You can find us here"
     }
   }
 }

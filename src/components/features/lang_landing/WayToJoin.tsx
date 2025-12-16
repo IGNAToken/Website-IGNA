@@ -35,15 +35,17 @@ const WayToJoin = () => {
               description={block.description}
               icon={<IconComponent className='size-8' />}
               ctaComponent={
-                <Button
-                  variant='outline'
-                  className='w-full'
-                  onClick={() => {
-                    handleNavigation(block.url, navigate)
-                  }}
-                >
-                  {block.buttonText}
-                </Button>
+                block.buttonText && block.url ? (
+                  <Button
+                    variant='outline'
+                    className='w-full'
+                    onClick={() => {
+                      handleNavigation(block.url, navigate)
+                    }}
+                  >
+                    {block.buttonText}
+                  </Button>
+                ) : undefined
               }
             />
           )
