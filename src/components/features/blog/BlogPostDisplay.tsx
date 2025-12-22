@@ -53,7 +53,9 @@ export default function BlogPostDisplay({
           )}
 
           <header className='mb-8'>
-            <h1 className='text-4xl lg:text-4xl font-bold text-white mb-6 leading-tight'>{post.title}</h1>
+            <h1 className='text-4xl lg:text-4xl font-bold text-white mb-6 leading-tight'>
+              {post.title}
+            </h1>
 
             <div className='flex items-center gap-4 mb-6'>
               <time className='text-sm text-white/60'>
@@ -66,14 +68,20 @@ export default function BlogPostDisplay({
             </div>
 
             <div className='relative overflow-hidden rounded-2xl mb-8'>
-              <img src={post.cover?.url} alt={post.title} className='w-full h-[400px] lg:h-[500px] object-cover' />
+              <img
+                src={post.cover?.url}
+                alt={post.title}
+                className='w-full h-[400px] lg:h-[500px] object-cover'
+              />
               <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
             </div>
           </header>
 
           <div className='prose prose-lg prose-invert max-w-none'>
             <div className='bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl mb-8'>
-              <summary className='text-lg font-medium text-white leading-relaxed list-none'>{post.abstract}</summary>
+              <summary className='text-lg font-medium text-white leading-relaxed list-none'>
+                {post.abstract}
+              </summary>
             </div>
 
             <div className='article-content'>
@@ -94,31 +102,44 @@ export default function BlogPostDisplay({
         {latestNews && latestNews.length > 0 && (
           <aside className='lg:w-80 lg:flex-shrink-0'>
             <div className='mb-8'>
-              <h3 className='text-xl font-semibold mb-6 text-white'>Follow us</h3>
+              <h3 className='text-xl font-semibold mb-6 text-white'>
+                Follow us
+              </h3>
               <div className='flex gap-2'>
-                {social?.map((social) => (
-                  <a
-                    href={social.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='hover:text-secondary transition-colors duration-300 bg-white/5 hover:bg-secondary/20 border border-secondary/20 p-2 rounded-md flex items-center gap-2'
-                  >
-                    <img
-                      src={social.icon.url}
-                      alt={social.platform}
-                      width={40}
-                      height={40}
-                      className='hover:scale-110 transition-all duration-300 invert-100'
-                    />
-                  </a>
-                ))}
+                {social
+                  ?.filter(
+                    (social) => social.lang === null || social.lang === 'en'
+                  )
+                  .map((social) => (
+                    <a
+                      href={social.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='hover:text-secondary transition-colors duration-300 bg-white/5 hover:bg-secondary/20 border border-secondary/20 p-2 rounded-md flex items-center gap-2'
+                    >
+                      <img
+                        src={social.icon.url}
+                        alt={social.platform}
+                        width={40}
+                        height={40}
+                        className='hover:scale-110 transition-all duration-300 invert-100'
+                      />
+                    </a>
+                  ))}
               </div>
             </div>
             <div className='sticky top-8'>
-              <h3 className='text-xl font-semibold mb-6 text-white'>Latest News</h3>
+              <h3 className='text-xl font-semibold mb-6 text-white'>
+                Latest News
+              </h3>
               <div className='space-y-4'>
                 {latestNews.map((news) => (
-                  <PostPreview key={news.id} imgURL={news.cover?.url} title={news.title} slug={news.url_slug} />
+                  <PostPreview
+                    key={news.id}
+                    imgURL={news.cover?.url}
+                    title={news.title}
+                    slug={news.url_slug}
+                  />
                 ))}
               </div>
             </div>

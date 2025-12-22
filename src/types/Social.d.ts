@@ -9,4 +9,5 @@ export type Social = {
   updatedAt: string
   publishedAt: string
   icon: Media
+  lang: string
 }

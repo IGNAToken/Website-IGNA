@@ -2,16 +2,18 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import Badge from '@/components/shared/Badge'
 import { useTranslation } from 'react-i18next'
 import CtaBlock from './CtaBlock'
+import { Route } from '@/routes/$lang'
 
 const UsageOfOil = () => {
   const { t } = useTranslation()
+  const { lang } = Route.useParams() // Get language from route: 'en', 'hu', or 'sk'
   return (
     <section className='flex flex-col items-center gap-12 px-4 mt-32'>
       <Badge>{t('landing.usageOfTheOil.subTitle')}</Badge>
       <SectionTitle title={t('landing.usageOfTheOil.title')} subtitle='' />
       <img
         className='w-full h-full object-cover max-w-5xl mx-auto'
-        src='\images\lang_landing\usage_of_oil.jpg'
+        src={`/images/lang_landing/${lang}/4-industries.webp`}
         alt='Usage of Oil'
       />
       <CtaBlock size='sm' />
