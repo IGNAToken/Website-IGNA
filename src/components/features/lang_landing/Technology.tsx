@@ -1,0 +1,58 @@
+import { useTranslation } from 'react-i18next'
+
+const Technology = () => {
+  const { t } = useTranslation()
+  const steps = t('landing.pyrolisysTechnology.stepsBlock.steps', {
+    returnObjects: true,
+  }) as Array<string>
+  return (
+    <section className='flex flex-col items-center gap-12 mt-32 '>
+      <div className='bg-gradient-to-tl from-primary to-secondary py-12 w-full'>
+        <div className='flex flex-col gap-4 max-w-5xl mx-auto'>
+          <div className='text-xl text-white uppercase'>
+            {t('landing.pyrolisysTechnology.subTitle')}
+          </div>
+          <div className='text-4xl font-bold text-white'>
+            {t('landing.pyrolisysTechnology.title')}
+          </div>
+        </div>
+      </div>
+      <div className='flex flex-col gap-4 max-w-5xl mx-auto'>
+        <div></div>
+        <div className='flex flex-col md:flex-row gap-8 items-start'>
+          <div className='flex-1'>
+            <div className='text-xl font-bold mb-4'>
+              {t('landing.pyrolisysTechnology.stepsBlock.title')}
+            </div>
+            <ol>
+              {steps.map((step) => (
+                <li className='text-lg number-increment' key={step}>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className='flex-1 grid grid-cols-2 gap-4 max-h-[200px]'>
+            <img
+              src='/images/pyrolisis-machine.avif'
+              alt='Placeholder 1'
+              className='w-full h-full object-cover rounded-lg col-span-2 max-h-[100px]'
+            />
+            <img
+              src='/images/pyrolisis-machine.avif'
+              alt='Placeholder 2'
+              className='w-full h-full object-cover rounded-lg col-span-1 max-h-[100px]'
+            />
+            <img
+              src='/images/pyrolisis-machine.avif'
+              alt='Placeholder 3'
+              className='w-full h-full object-cover rounded-lg col-span-1 max-h-[100px]'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Technology

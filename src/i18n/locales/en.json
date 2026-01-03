@@ -1,0 +1,22 @@
+{
+  "landing": {
+    "hero": {
+      "subtitle": "TURN POLLUTION INTO SOLUTION",
+      "title": {
+        "row1": "Transform",
+        "row2": "Waste",
+        "row3": "into",
+        "row4": "Wealth"
+      },
+      "description": "Join the revolutionary movement to turn plastic waste into a profitable investment with the help of our pioneering cryptocurrency.",
+      "buttons": {
+        "learnMore": "Learn More",
+        "joinDiscord": "Join Discord"
+      }
+    },
+    "motto": {
+      "badge": "Project Essentials",
+      "text": "By investing in <span>$IGNA</span>, you're not just buying crypto — you are contributing to the creation of pyrolysis plants that turn waste plastic into oil, reducing global pollution. Your investment supports worldwide adoption of this technology, promoting a cleaner environment. Join us by buying our crypto and make a positive impact today!"
+    }
+  }
+}

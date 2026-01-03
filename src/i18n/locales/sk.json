@@ -1,0 +1,22 @@
+{
+  "landing": {
+    "hero": {
+      "subtitle": "PREMENIŤ ZNEČISTENIE NA RIEŠENIE",
+      "title": {
+        "row1": "Premeniť",
+        "row2": "Odpad",
+        "row3": "na",
+        "row4": "Bohatstvo"
+      },
+      "description": "Pridaj sa k revolučnému hnutiu, ktoré mení plastový odpad na ziskovú investíciu pomocou našej priekopníckej kryptomeny.",
+      "buttons": {
+        "learnMore": "Dozvedieť sa viac",
+        "joinDiscord": "Pridať sa na Discord"
+      }
+    },
+    "motto": {
+      "badge": "Základné informácie o projekte",
+      "text": "Investovaním do <span>$IGNA</span> nekupujete len kryptomenu — prispievate k vytvoreniu pyrolýznych zariadení, ktoré menia plastový odpad na olej, čím znižujú globálne znečistenie. Vaša investícia podporuje celosvetové prijatie tejto technológie a podporuje čistejšie životné prostredie. Pridajte sa k nám nákupom našej kryptomeny a urobte dnes pozitívny dopad!"
+    }
+  }
+}

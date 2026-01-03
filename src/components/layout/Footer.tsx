@@ -12,12 +12,7 @@ const links = [
     label: 'Buy $IGNA',
     href: '/swap',
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
 ]
-
 const Footer = () => {
   const { data: socials } = useSocial()
   return (
@@ -38,6 +33,14 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href='mailto:contact@ignatoken.com'
+                className='hover:text-primary transition-colors text-white/80'
+              >
+                Contact: contact@ignatoken.com
+              </a>
+            </li>
           </ul>
         </div>
       </div>
