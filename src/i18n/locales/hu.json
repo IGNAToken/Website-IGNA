@@ -1,5 +1,10 @@
 {
   "landing": {
+    "ctaBlock": {
+      "call": "Hívjon minket",
+      "contact": "Vegye fel velünk a kapcsolatot",
+      "join": "Csatlakozzon a közösségünkhöz"
+    },
     "hero": {
       "subtitle": "Az IGNA egy",
       "title": {
@@ -125,17 +130,18 @@
         {
           "title": "Token vásárlás",
           "description": "(IGNA coin) → hosszú távú érték",
-          "buttonText": "Érdekel"
+          "buttonText": "Érdekel",
+          "url": "/swap"
         },
         {
           "title": "Támogatói csomagok",
           "description": "Magasabb értékű befektetési igényeket elégít ki",
-          "buttonText": "Támogatom"
+          "buttonText": "Támogatom",
+          "url": "https://slavkask.com/"
         },
         {
           "title": "Szervezetek",
-          "description": "Környezetvédelmi vagy egyéb más témában",
-          "buttonText": "Ezt választom"
+          "description": "Környezetvédelmi vagy egyéb más témában"
         }
       ]
     },

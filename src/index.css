@@ -127,3 +127,25 @@
     scroll-behavior: smooth;
   }
 }
+
+@layer utilities {
+  /* Number increment styling for ordered lists */
+  ol.number-increment-list {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ol.number-increment-list .number-increment {
+    counter-increment: item;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  ol.number-increment-list .number-increment::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+}

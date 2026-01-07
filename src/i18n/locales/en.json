@@ -1,22 +1,156 @@
 {
   "landing": {
+    "ctaBlock": {
+      "call": "Call us",
+      "contact": "Contact us",
+      "join": "Join the community"
+    },
     "hero": {
-      "subtitle": "TURN POLLUTION INTO SOLUTION",
+      "subtitle": "The IGNA is a",
       "title": {
-        "row1": "Transform",
-        "row2": "Waste",
-        "row3": "into",
-        "row4": "Wealth"
+        "row1": "Real project-based",
+        "row2": "environmental investment"
       },
-      "description": "Join the revolutionary movement to turn plastic waste into a profitable investment with the help of our pioneering cryptocurrency.",
       "buttons": {
-        "learnMore": "Learn More",
-        "joinDiscord": "Join Discord"
+        "learnMore": "További információ",
+        "joinDiscord": "Csatlakozz a Discordhoz"
       }
     },
-    "motto": {
-      "badge": "Project Essentials",
-      "text": "By investing in <span>$IGNA</span>, you're not just buying crypto — you are contributing to the creation of pyrolysis plants that turn waste plastic into oil, reducing global pollution. Your investment supports worldwide adoption of this technology, promoting a cleaner environment. Join us by buying our crypto and make a positive impact today!"
+    "vision": {
+      "badge": "What is our goal?",
+      "title": "Our vision",
+      "subtitle": "IGNA is an environmental and technological initiative launched by a non-profit organization. Our goal is simple.",
+      "blocks": [
+        {
+          "title": "Environmental Protection",
+          "description": "The management of plastic waste has become an increasingly urgent global issue, as it burdens nature for centuries. The pyrolysis technology used by IGNA makes it possible to extract energy and oil even from non-recyclable plastics. In this way, we address an environmental crisis while building a sustainable economic model."
+        },
+        {
+          "title": "A Thriving Opportunity",
+          "description": "IGNA is not a short-term promise but a long-term creation of value. The revenue from oil produced from plastic waste continuously finances the construction of new plants, meaning each contribution fuels further growth. It is a self-sustaining cycle that provides a solid foundation for the stability and growth of the token’s value."
+        },
+        {
+          "title": "A Value-Driven Community",
+          "description": "IGNA is not just a project, but a united community in which every member actively contributes to a cleaner future. As a participant, you don’t just gain potential financial returns — you become part of a global movement that creates tangible impact on the world. This community brings value to its members while driving real change in society."
+        }
+      ]
+    },
+    "valueFromWaste": {
+      "subText": "Plastic waste is no longer garbage — it’s value.",
+      "mainText": "IGNA is an environmental project that turns waste into clean energy and builds a sustainable source of lasting value."
+    },
+    "goal": {
+      "subText": "What We Build",
+      "heading": "Our Goals",
+      "subTitle": "We produce oil from plastic waste using modern pyrolysis technology. The IGNA project ensures that our partners pay part of their waste removal fees in tokens, creating continuous demand and economic stability. This approach supports both environmental impact and sustainable value growth.",
+      "highlightedText": "We reinvest the revenue into building new plants."
+    },
+    "partOfTheChange": {
+      "subText": "Be Part of the Change",
+      "title": "„The world is facing a plastic crisis.”",
+      "description": "A single PET bottle takes 450 years to decompose. Every year, more than 8 million tons of plastic end up in the ocean. Traditional recycling methods cannot process it all."
+    },
+    "pyrolisis": {
+      "title": "The Pyrolysis Machine Provides the Solution",
+      "subTitlte": "„With IGNA’s pyrolysis plants, we recycle plastic waste. The oil produced generates revenue, which is reinvested into building new facilities. This creates a self-sustaining, circular model.”",
+      "button": "I'm interested"
+    },
+    "investment": {
+      "badge": "Investment",
+      "subTitle": "Joining Early Is the Best Decision",
+      "title": "Why Is IGNA a Smart Choice?",
+      "blocks": [
+        {
+          "title": "Security",
+          "description": "The project is backed by 40 years of experience in environmental protection and waste management."
+        },
+        {
+          "title": "Transparency",
+          "description": "The foundation of IGNA’s operation is trust and accountability. Revenues and token movements are recorded in separate pools, making it clear how resources are reinvested into building new plants and stimulating trade. The waste management fees paid by our partners in tokens are also fully traceable, ensuring continuous demand for IGNA. This system creates stability while ensuring full transparency in how every contribution supports real-world impact."
+        },
+        {
+          "title": "Growth potential",
+          "description": "The oil revenue continuously finances the construction of new plants – the more plants there are, the greater the revenue."
+        }
+      ]
+    },
+    "pyrolisysTechnology": {
+      "subTitle": "Get to Know It!",
+      "title": "Learn How Pyrolysis Technology Works",
+      "stepsBlock": {
+        "title": "In five steps – a major transformation.",
+        "steps": [
+          "Waste collection",
+          "Processed by the pyrolysis plant",
+          "Oil, gas, and energy are generated",
+          "Revenue reinvested into new plants",
+          "Investor returns → shared environmental impact"
+        ]
+      }
+    },
+    "usageOfTheOil": {
+      "title": "How Can the Oil Be Used?",
+      "subTitle": "Multiple Uses and Benefits",
+      "buttonText": "Join Us"
+    },
+    "experiences": {
+      "title": "Reliability and Experience",
+      "blocks": [
+        {
+          "title": "Reliable Background",
+          "description": "The project is backed by a non-profit organization (SlavkaSk n.o.)."
+        },
+        {
+          "title": "Real project",
+          "description": "The tokens are linked to a concrete economic activity."
+        },
+        {
+          "title": "Growth",
+          "description": "The revenue is reinvested, not used for speculation."
+        },
+        {
+          "title": "Demand is growing",
+          "description": "Token burn mechanism → decreasing supply, increasing value."
+        }
+      ],
+      "buttons": {
+        "community": "Go to the community",
+        "invest": "I want to invest"
+      }
+    },
+    "roadmap": {
+      "subtitle": "Milestones and Vision",
+      "title": "Roadmap",
+      "highlightedText": "We are committed to our goals"
+    },
+    "wayToJoin": {
+      "title": "Ways to Join and Contribute",
+      "subTitle": "How Can You Become Part of the IGNA Project?",
+      "blocks": [
+        {
+          "title": "Token Purchase",
+          "description": "(IGNA token) → long-term value",
+          "buttonText": "I'm interested",
+          "url": "/swap"
+        },
+        {
+          "title": "Support Packages",
+          "description": "Meets higher-value investment demands.",
+          "buttonText": "I want to support",
+          "url": "https://slavkask.com/"
+        },
+        {
+          "title": "Organizations",
+          "description": "In environmental or other related fields."
+        }
+      ]
+    },
+    "joinTheCommunity": {
+      "title": "Join our Community"
+    },
+    "followUs": {
+      "title": "Follow Us on Social Media!",
+      "textForSocials": "You can find us here"
     }
   }
 }

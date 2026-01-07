@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { ShoppingCart, Gift, Building2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from '@tanstack/react-router'
+import { handleNavigation } from '@/lib/urlHelpers'
 
 const WayToJoin = () => {
   const { t } = useTranslation()
@@ -16,6 +17,7 @@ const WayToJoin = () => {
     title: string
     description: string
     buttonText: string
+    url: string
   }>
 
   return (
@@ -23,7 +25,7 @@ const WayToJoin = () => {
       <Badge>{t('landing.wayToJoin.subTitle')}</Badge>
       <SectionTitle title={t('landing.wayToJoin.title')} subtitle='' />
 
-      <div className='flex gap-4 max-w-5xl mx-auto'>
+      <div className='flex gap-4 flex-col md:flex-row max-w-5xl mx-auto'>
         {blocks.map((block, index) => {
           const IconComponent = icons[index % icons.length]
           return (
@@ -33,15 +35,17 @@ const WayToJoin = () => {
               description={block.description}
               icon={<IconComponent className='size-8' />}
               ctaComponent={
-                <Button
-                  variant='outline'
-                  className='w-full'
-                  onClick={() => {
-                    navigate({ to: '/swap' })
-                  }}
-                >
-                  {block.buttonText}
-                </Button>
+                block.buttonText && block.url ? (
+                  <Button
+                    variant='outline'
+                    className='w-full'
+                    onClick={() => {
+                      handleNavigation(block.url, navigate)
+                    }}
+                  >
+                    {block.buttonText}
+                  </Button>
+                ) : undefined
               }
             />
           )

@@ -13,9 +13,7 @@ const Card = ({ title, description, icon, ctaComponent }: Props) => {
       <div className='size-10 bg-primary/30 rounded-full flex items-center justify-center blur-xs relative z-0'></div>
       <div className='absolute'>{icon}</div>
       <h3 className='text-xl font-bold text-primary text-center'>{title}</h3>
-      <p className='text-sm font-light text-center text-white/75'>
-        {description}
-      </p>
+      <p className='text-sm font-light text-center text-white/75'>{description}</p>
       {ctaComponent && ctaComponent}
     </div>
   )

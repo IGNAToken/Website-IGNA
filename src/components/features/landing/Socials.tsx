@@ -25,22 +25,24 @@ const Socials = () => {
 export const SocialContent = ({ socials }: { socials: Social[] }) => {
   return (
     <div className='flex flex-wrap gap-4 max-w-2xl justify-center'>
-      {socials.map((social) => (
-        <a
-          key={social.id}
-          href={social.link}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <img
-            src={social.icon.url}
-            alt={social.platform}
-            width={40}
-            height={40}
-            className='hover:scale-110 transition-all duration-300'
-          />
-        </a>
-      ))}
+      {socials
+        .filter((social) => social.lang === null || social.lang === 'en')
+        .map((social) => (
+          <a
+            key={social.id}
+            href={social.link}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img
+              src={social.icon.url}
+              alt={social.platform}
+              width={40}
+              height={40}
+              className='hover:scale-110 transition-all duration-300'
+            />
+          </a>
+        ))}
     </div>
   )
 }

@@ -18,6 +18,7 @@ export const Route = createFileRoute('/$lang/landing')({
 })
 
 function LandingPage() {
+  const { lang } = Route.useParams()
   return (
     <>
       <HeroTranslated />
@@ -37,7 +38,7 @@ function LandingPage() {
         <UsageOfOil />
         <Roadmap />
         <WayToJoin />
-        <Socials />
+        <Socials lang={lang} />
       </Suspense>
     </>
   )
