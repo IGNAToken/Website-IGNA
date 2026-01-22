@@ -7,7 +7,7 @@ export const Route = createFileRoute('/$lang')({
   beforeLoad: ({ params }) => {
     const { lang } = params
     // Validate language parameter
-    if (lang && !['en', 'hu', 'sk'].includes(lang)) {
+    if (lang && !['en', 'hu', 'sk', 'uae'].includes(lang)) {
       throw redirect({
         to: '/$lang/landing',
         params: { lang: 'en' },
@@ -22,7 +22,7 @@ function LangLayout() {
 
   useEffect(() => {
     // Change language when route parameter changes
-    if (lang && ['en', 'hu', 'sk'].includes(lang)) {
+    if (lang && ['en', 'hu', 'sk', 'uae'].includes(lang)) {
       i18n.changeLanguage(lang)
     }
   }, [lang])

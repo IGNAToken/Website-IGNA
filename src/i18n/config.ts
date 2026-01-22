@@ -6,6 +6,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import enTranslations from './locales/en.json'
 import huTranslations from './locales/hu.json'
 import skTranslations from './locales/sk.json'
+import uaeTranslations from './locales/uae.json'
 
 const resources = {
   en: {
@@ -17,6 +18,9 @@ const resources = {
   sk: {
     translation: skTranslations,
   },
+  uae: {
+    translation: uaeTranslations,
+  },
 }
 
 i18n
@@ -25,7 +29,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'hu', 'sk'],
+    supportedLngs: ['en', 'hu', 'sk', 'uae'],
     defaultNS: 'translation',
     interpolation: {
       escapeValue: false, // React already escapes values

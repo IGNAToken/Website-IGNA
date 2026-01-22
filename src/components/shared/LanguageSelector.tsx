@@ -3,7 +3,7 @@ import { Globe, ChevronDown } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 export type Language = {
-  code: 'en' | 'hu' | 'sk'
+  code: 'en' | 'hu' | 'sk' | 'uae'
   label: string
   to: string
 }
@@ -24,6 +24,11 @@ const languages: Language[] = [
     label: 'Slovak',
     to: '/sk/landing',
   },
+  {
+    code: 'uae',
+    label: 'العربية',
+    to: '/uae/landing',
+  },
 ]
 
 type LanguageSelectorProps = {
@@ -42,6 +47,7 @@ const LanguageSelector = ({ variant = 'dropdown', onLanguageChange }: LanguageSe
     const path = location.pathname
     if (path.startsWith('/hu/')) return 'hu'
     if (path.startsWith('/sk/')) return 'sk'
+    if (path.startsWith('/uae/')) return 'uae'
     return 'en'
   }
 
