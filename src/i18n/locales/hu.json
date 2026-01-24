@@ -134,14 +134,10 @@
           "url": "/swap"
         },
         {
-          "title": "Támogatói csomagok",
-          "description": "Magasabb értékű befektetési igényeket elégít ki",
+          "title": "SlavkaSk nonprofit szervezet",
+          "description": "Adományok a SlavkaSk n.o. részére",
           "buttonText": "Támogatom",
           "url": "https://slavkask.com/"
-        },
-        {
-          "title": "Szervezetek",
-          "description": "Környezetvédelmi vagy egyéb más témában"
         }
       ]
     },

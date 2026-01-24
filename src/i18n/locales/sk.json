@@ -134,14 +134,10 @@
           "url": "/swap"
         },
         {
-          "title": "Podporné balíky",
-          "description": "Spĺňa investičné požiadavky s vyššou hodnotou",
+          "title": "Nezisková organizácia SlavkaSk n.o.",
+          "description": "Dary pre neziskovú organizáciu SlavkaSk n.o.",
           "buttonText": "Podporujem",
           "url": "https://slavkask.com/"
-        },
-        {
-          "title": "Organizácie",
-          "description": "V oblasti ochrany životného prostredia alebo iných tém"
         }
       ]
     },

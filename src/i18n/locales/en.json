@@ -134,14 +134,10 @@
           "url": "/swap"
         },
         {
-          "title": "Support Packages",
-          "description": "Meets higher-value investment demands.",
+          "title": "Non-profit organization SlavkaSk n.o.",
+          "description": "Donations to the non-profit organization SlavkaSk n.o.",
           "buttonText": "I want to support",
           "url": "https://slavkask.com/"
-        },
-        {
-          "title": "Organizations",
-          "description": "In environmental or other related fields."
         }
       ]
     },
