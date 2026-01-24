@@ -1,6 +1,7 @@
 import AnimatedBubbles from '@/components/shared/AnimatedBubbles'
 import { Button } from '@/components/ui/button'
 import { DISCORD_URL } from '@/config'
+import { Link } from '@tanstack/react-router'
 
 const Hero = () => {
   return (
@@ -36,7 +37,7 @@ const Hero = () => {
           </h3>
           <div className='hero-buttons-container'>
             <Button variant='outline' className='bg-background hero-button hero-button-outline' asChild>
-              <a href='#strategy'>Learn More</a>
+              <Link to='/swap'>Swap Now</Link>
             </Button>
             <Button className='font-bold hero-button hero-button-default' asChild>
               <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>

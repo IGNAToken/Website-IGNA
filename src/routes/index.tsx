@@ -15,6 +15,7 @@ const RoadmapSection = lazy(() => import('@/components/features/landing/Roadmap'
 const Contact = lazy(() => import('@/components/features/landing/Contact'))
 const TeamSection = lazy(() => import('@/components/features/landing/TeamSection'))
 const Strategy = lazy(() => import('@/components/features/landing/Strategy'))
+const SwapCta = lazy(() => import('@/components/features/landing/SwapCta'))
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -37,6 +38,7 @@ function Index() {
         <Tokenomics />
         <TeamSection />
         <Strategy />
+        <SwapCta />
         <Socials />
         <Reasons />
         <RoadmapSection />
