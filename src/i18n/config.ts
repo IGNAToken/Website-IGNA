@@ -7,6 +7,7 @@ import enTranslations from './locales/en.json'
 import huTranslations from './locales/hu.json'
 import skTranslations from './locales/sk.json'
 import uaeTranslations from './locales/uae.json'
+import zhTranslations from './locales/zh.json'
 
 const resources = {
   en: {
@@ -21,6 +22,9 @@ const resources = {
   uae: {
     translation: uaeTranslations,
   },
+  zh: {
+    translation: zhTranslations,
+  },
 }
 
 i18n
@@ -29,7 +33,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'hu', 'sk', 'uae'],
+    supportedLngs: ['en', 'hu', 'sk', 'uae', 'zh'],
     defaultNS: 'translation',
     interpolation: {
       escapeValue: false, // React already escapes values
