@@ -72,7 +72,16 @@ const Milestone = ({ title, items, index }: { title: string; items: RoadmapItem[
           <div className='text-white text-2xl font-bold'>{title}</div>
           {items.map((item) => (
             <div key={item.title} className='flex items-center gap-4'>
-              <div className={cn('min-w-3 min-h-3 rounded-full bg-white/50', item.done && 'bg-primary')} />
+              <div
+                className={cn(
+                  'min-w-3 min-h-3 rounded-full',
+                  item.done
+                    ? 'bg-primary'
+                    : item.in_progress
+                      ? 'border border-dashed border-primary bg-transparent'
+                      : 'bg-white/50'
+                )}
+              />
               <div className='text-white/75 text-md'>{item.title}</div>
             </div>
           ))}

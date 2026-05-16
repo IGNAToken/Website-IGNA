@@ -13,6 +13,7 @@ export type RoadmapItem = {
   documentId: string
   title: string
   done: boolean
+  in_progress: boolean
   createdAt: string
   updatedAt: string
   publishedAt: string
